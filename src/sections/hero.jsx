@@ -1,9 +1,10 @@
 import { Canvas } from '@react-three/fiber';
 import React, { Suspense, useRef } from 'react';
-import Creature from '../components/creature';
-import { OrbitControls, Sphere, useHelper } from '@react-three/drei';
+import Creature from '../components/Creature';
+import { OrbitControls, ScrollControls, Sphere, useHelper } from '@react-three/drei';
 import { SpotLightHelper } from 'three';
-import Tea from '../components/tea';
+import Tea from '../components/Tea';
+import CanvasLoader from '../components/CanvasLoader';
 
 const Hero = () => {
 
@@ -16,20 +17,18 @@ const Hero = () => {
 
             <div className='w-full h-full absolute inset-0'>
                 <Canvas className='w-full h-full'>
-                    <axesHelper args={[5]} />
-                    <gridHelper args={[100, 100]} />
-                    <OrbitControls />                    
+                    <Suspense fallback={<CanvasLoader />}>
+                        {/* <axesHelper args={[5]} />
+                        <gridHelper args={[100, 100]} />
+                        <OrbitControls />                    
+                         */}
+                        <spotLight position={[0, 2, 0]} intensity={5} />
+
+                        <ScrollControls pages={3} damping={0.25}>
+                            <Tea />
+                        </ScrollControls>
+                    </Suspense>
                     
-                    <spotLight position={[0, 2, 0]} intensity={5} />
-
-                    {/* <mesh position={[0, 0, 0]}>
-                        <sphereGeometry />
-                        <meshStandardMaterial color="hotpink" />
-                    </mesh> */}
-
-                    {/* <Creature />  */}
-                    <Tea />
-                    {/* <ambientLight intensity={1} /> */}
                 </Canvas>
             </div>
         </section>
