@@ -20,8 +20,8 @@ const Hero = () => {
                     <Suspense fallback={<CanvasLoader />}>
                         {/* <axesHelper args={[5]} />
                         <gridHelper args={[100, 100]} />
-                        <OrbitControls />                    
-                         */}
+                        <OrbitControls/>                     */}
+                        
                         <spotLight position={[0, 2, 0]} intensity={5} />
 
                         <ScrollControls pages={3} damping={0.25}>
