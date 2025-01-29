@@ -20,9 +20,12 @@ export default function Tea(props) {
 
   const scroll = useScroll(); 
 
+  
+
   useFrame(() => {
     tl.current.progress(scroll.offset)    
-    materials.peripheri_Base_Color.opacity = scroll.offset
+    const opacityMultiplier = scroll.curve(0, 1)
+    materials.peripheri_Base_Color.opacity = opacityMultiplier
   })
 
   useLayoutEffect(() => {
@@ -31,7 +34,7 @@ export default function Tea(props) {
     tl.current.to(
       ref.current.position, 
       {
-        duration: 1, 
+        duration: 0.5, 
         y: -2
       }, 
       0
