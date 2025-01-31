@@ -24,18 +24,7 @@ const Hero = () => {
                         <OrbitControls/>                     */}
                         
                         <spotLight position={[0, 2, 0]} intensity={5} />
-
-                        <ScrollControls damping={0} pages={2}>
-                            
-                            <Scroll html>
-                                <div className='w-screen fixed top-0 left-0'>
-                                    <Footer />
-                                </div>
-                                
-                            </Scroll>
-                            <Tea />
-                        </ScrollControls>
-                        
+                        <Tea />
                     </Suspense>
                     
                 </Canvas>

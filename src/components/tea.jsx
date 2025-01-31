@@ -1,8 +1,7 @@
-import React, { useLayoutEffect, useRef } from 'react'
-import { useGLTF, useScroll } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber';
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 import gsap from 'gsap';
-
+import { useGSAP } from '@gsap/react';
 
 export default function Tea(props) {
   const { nodes, materials } = useGLTF('/models/fiesta_tea.glb')
@@ -16,31 +15,16 @@ export default function Tea(props) {
   // materials.peripheri_Base_Color.opacity = 0
 
   const ref = useRef(); 
-  const tl = useRef(); 
 
-  const scroll = useScroll(); 
-
-  
-
-  useFrame(() => {
-    tl.current.progress(scroll.offset)    
-    const opacityMultiplier = scroll.curve(0, 1)
-    materials.peripheri_Base_Color.opacity = opacityMultiplier
-  })
-
-  useLayoutEffect(() => {
-    tl.current = gsap.timeline();
-
-    tl.current.to(
-      ref.current.position, 
-      {
-        duration: 0.5, 
-        y: -2
+  useGSAP(() => {
+    gsap.to(ref.current.position, {
+      duration: 0.5,
+      y: -2,
+      scrollTrigger: {
+        trigger:  ref.current.position,
       }, 
-      0
-    )
+    })
   })
-  
 
   return (
     <group {...props} dispose={null} scale={[0.5, 0.5, 0.5]} position={[0, -30, 0]} ref={ref}>
