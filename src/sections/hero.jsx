@@ -1,13 +1,28 @@
 import { Canvas } from '@react-three/fiber';
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import Creature from '../components/Creature';
 import { Html, OrbitControls, Scroll, ScrollControls, Sphere, useHelper } from '@react-three/drei';
-import { SpotLightHelper } from 'three';
 import Tea from '../components/Tea';
 import CanvasLoader from '../components/CanvasLoader';
-import Footer from './Foot';
+import { useGSAP } from '@gsap/react';
+
+
+
+
 
 const Hero = () => {
+    
+    const canvasRef = useRef()
+
+    var teaPosition = 0
+
+    useGSAP(() => {
+        canvasRef.current.addEventListener("click", () => {
+            gsap.to(teaPosition, {
+                        
+            })
+        })
+    })
 
     return ( 
         <section className='min-h-screen w-full flex flex-col relative '> 
@@ -17,14 +32,14 @@ const Hero = () => {
             </div> */}
 
             <div className='w-full h-full absolute inset-0'>
-                <Canvas className='w-full h-full'>
+                <Canvas className='w-full h-full' ref={canvasRef}>
                     <Suspense fallback={<CanvasLoader />}>
                         {/* <axesHelper args={[5]} />
                         <gridHelper args={[100, 100]} />
                         <OrbitControls/>                     */}
                         
                         <spotLight position={[0, 2, 0]} intensity={5} />
-                        <Tea />
+                        <Tea teaPosition={0}/>
                     </Suspense>
                     
                 </Canvas>

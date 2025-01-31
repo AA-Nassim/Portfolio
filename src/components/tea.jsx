@@ -13,21 +13,8 @@ export default function Tea(props) {
   materials.trad_edges.transparent = true
 
   // materials.peripheri_Base_Color.opacity = 0
-
-  const ref = useRef(); 
-
-  useGSAP(() => {
-    gsap.to(ref.current.position, {
-      duration: 0.5,
-      y: -2,
-      scrollTrigger: {
-        trigger:  ref.current.position,
-      }, 
-    })
-  })
-
   return (
-    <group {...props} dispose={null} scale={[0.5, 0.5, 0.5]} position={[0, -30, 0]} ref={ref}>
+    <group {...props} dispose={null} scale={[0.5, 0.5, 0.5]} position={[0, -30, 0]} ref={props.innerRef}>
       
       <mesh
         geometry={nodes.Object_4.geometry}
