@@ -10,7 +10,7 @@ const Hero = () => {
                 <p className='sm:text-3xl text-2xl font-medium text-white text-center font-generalsans'>Hi, I am about to <span className='waving-hand'>👽</span></p>
                 <p className='hero_tag text-gray_gradient text-center'>bogos your bitned</p>
             </div>
-
+            {/* ADD BUTTON TO SAY SCROLL DOWN */}
             <CanvasContainer /> 
         </section>
      );
