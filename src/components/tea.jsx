@@ -13,8 +13,11 @@ export default function Tea(props) {
   materials.trad_edges.transparent = true
 
   // materials.peripheri_Base_Color.opacity = 0
+  
+  
+
   return (
-    <group {...props} dispose={null} scale={[0.5, 0.5, 0.5]} position={[0, -30, 0]} ref={props.innerRef}>
+    <group {...props} dispose={null} scale={[0.5, 0.5, 0.5]} position={[0, 0, 0]} className='BigTea'>
       
       <mesh
         geometry={nodes.Object_4.geometry}
