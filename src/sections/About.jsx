@@ -2,6 +2,14 @@ import React from 'react';
 
 const About = () => {
     return ( 
+        <section className=' h-screen w-screen c-space  second-section '>
+            jouj
+        </section>
+     );
+}
+
+const About2 = () => {
+    return ( 
         <section className='c-space my-20 second-section'>
             <div className='grid md:grid-cols-3 md:grid-rows-3 grid-cols-1 gap-5 h-full'>
                 
@@ -65,5 +73,5 @@ const About = () => {
         </section>
      );
 }
- 
+
 export default About;

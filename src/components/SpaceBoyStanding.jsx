@@ -4,6 +4,7 @@ import { Leva, useControls } from 'leva'
 import { useFrame, useThree } from '@react-three/fiber'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { Quaternion } from 'three'
 
 export default function SpaceBoyStanding(props) {
   const { nodes, materials } = useGLTF('/models/space_boy-standing.glb')
@@ -11,45 +12,39 @@ export default function SpaceBoyStanding(props) {
   // const controls = useControls('HackerRoom', {
   //   posX: {
   //     value: 0,
-  //     min:-5, 
-  //     max:5, 
+  //     min:-10, 
+  //     max:10, 
   //     step:0.1
   //   }, 
   //   posY: {
-  //     value: 0,
-  //     min:-5, 
-  //     max:5, 
+  //     value: 5,
+  //     min:-10, 
+  //     max:10, 
   //     step:0.1
   //   }, 
   //   posZ: {
-  //     value: 0,
-  //     min:-5, 
-  //     max:5, 
+  //     value: 5,
+  //     min:-10, 
+  //     max:10, 
   //     step:0.1
   //   }, 
   //   rotX: {
   //     value: 0,
-  //     min:0, 
-  //     max:360, 
+  //     min:-Math.PI * 2, 
+  //     max:Math.PI * 2, 
   //     step:0.01
   //   }, 
   //   rotY: {
   //     value: 0,
-  //     min:0, 
-  //     max:360, 
+  //     min:-Math.PI * 2, 
+  //     max:Math.PI * 2, 
   //     step:0.01
   //   }, 
   //   rotZ: {
   //     value: 0,
-  //     min:0, 
-  //     max:360, 
+  //     min:-Math.PI * 2, 
+  //     max:Math.PI * 2, 
   //     step:0.01
-  //   }, 
-  //   scale: {
-  //     value: 1,
-  //     min:-5, 
-  //     max:5, 
-  //     step:0.1
   //   }, 
   // })
 
@@ -58,9 +53,7 @@ export default function SpaceBoyStanding(props) {
   //   state.camera.position.y = controls.posY
   //   state.camera.position.z = controls.posZ
     
-  //   state.camera.rotation.x = controls.rotX
-  //   state.camera.rotation.y = controls.rotY
-  //   state.camera.rotation.z = controls.rotZ
+  //   state.camera.rotation.set(controls.rotX, controls.rotY, controls.rotZ)
   // })
 
   const {camera} = useThree()
@@ -69,17 +62,32 @@ export default function SpaceBoyStanding(props) {
 
   useGSAP(() => {
     tl.to(camera.position, {
-      x:5, 
-      y:4, 
-      z:2, 
+      z:5, 
       scrollTrigger: {
         trigger: ".second-section", 
         start: "top bottom", 
         end: "top top",
         scrub: true, 
         immediateRender: false, 
-      }
+      }, 
+      
     })
+    const camYPos = camera.position.y;
+    tl.to(camera.position, {
+      x: 10, 
+      y: 10, 
+      scrollTrigger: {
+        trigger: ".third-section", 
+        start: "top bottom", 
+        end: "top top",
+        scrub: true, 
+        immediateRender: false, 
+      }, 
+      onUpdate: () => {
+          camera.lookAt(0, camYPos, 0)
+      }, 
+    })
+
   }, [])
 
   return (

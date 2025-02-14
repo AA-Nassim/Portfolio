@@ -8,6 +8,9 @@ import About from './sections/About';
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import ReactLenis from 'lenis/react';
+import Skills from './sections/Skills';
+import Experiences from './sections/Experiences';
+import CanvasContainer from './components/CanvasContainer';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,11 +21,14 @@ const App = () => {
   return ( 
   <ReactLenis root>
     <main className='max-w-7xl mx-auto'>
-        <Navbar />
-        <Hero /> 
-        <About />
-        <Footer />
-    </main> 
+      <Navbar />
+      <CanvasContainer />
+      <Hero /> 
+      <About />
+      <Skills /> 
+      <Experiences /> 
+      <Footer />
+    </main>
   </ReactLenis>
   );
 }
