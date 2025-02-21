@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect } from 'react';
-import Navbar from './sections/navbar';
+import Navbar from './sections/Navbar';
 import Hero from './sections/hero';
 import Footer from './sections/Foot';
 import About from './sections/About';
@@ -20,7 +20,7 @@ const App = () => {
 
   return ( 
   <ReactLenis root>
-    <main className='max-w-7xl mx-auto'>
+    <main className='max-w-7xl mx-auto section-container'>
       <Navbar />
       <CanvasContainer />
       <Hero /> 

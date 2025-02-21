@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return ( 
-        <section className=' h-screen w-screen c-space  second-section '>
+        <section className=' h-screen w-screen c-space  second-section text-white-800'>
             jouj
         </section>
      );

@@ -1,94 +1,9 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
-import { Html, useGLTF } from '@react-three/drei'
-import { Leva, useControls } from 'leva'
-import { useFrame, useThree } from '@react-three/fiber'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { Quaternion } from 'three'
+import React from 'react'
+import { useGLTF } from '@react-three/drei'
+
 
 export default function SpaceBoyStanding(props) {
   const { nodes, materials } = useGLTF('/models/space_boy-standing.glb')
-
-  // const controls = useControls('HackerRoom', {
-  //   posX: {
-  //     value: 0,
-  //     min:-10, 
-  //     max:10, 
-  //     step:0.1
-  //   }, 
-  //   posY: {
-  //     value: 5,
-  //     min:-10, 
-  //     max:10, 
-  //     step:0.1
-  //   }, 
-  //   posZ: {
-  //     value: 5,
-  //     min:-10, 
-  //     max:10, 
-  //     step:0.1
-  //   }, 
-  //   rotX: {
-  //     value: 0,
-  //     min:-Math.PI * 2, 
-  //     max:Math.PI * 2, 
-  //     step:0.01
-  //   }, 
-  //   rotY: {
-  //     value: 0,
-  //     min:-Math.PI * 2, 
-  //     max:Math.PI * 2, 
-  //     step:0.01
-  //   }, 
-  //   rotZ: {
-  //     value: 0,
-  //     min:-Math.PI * 2, 
-  //     max:Math.PI * 2, 
-  //     step:0.01
-  //   }, 
-  // })
-
-  // useFrame((state, delta) => {
-  //   state.camera.position.x = controls.posX
-  //   state.camera.position.y = controls.posY
-  //   state.camera.position.z = controls.posZ
-    
-  //   state.camera.rotation.set(controls.rotX, controls.rotY, controls.rotZ)
-  // })
-
-  const {camera} = useThree()
-  const tl = gsap.timeline()
-
-
-  useGSAP(() => {
-    tl.to(camera.position, {
-      z:5, 
-      scrollTrigger: {
-        trigger: ".second-section", 
-        start: "top bottom", 
-        end: "top top",
-        scrub: true, 
-        immediateRender: false, 
-      }, 
-      
-    })
-    const camYPos = camera.position.y;
-    tl.to(camera.position, {
-      x: 10, 
-      y: 10, 
-      scrollTrigger: {
-        trigger: ".third-section", 
-        start: "top bottom", 
-        end: "top top",
-        scrub: true, 
-        immediateRender: false, 
-      }, 
-      onUpdate: () => {
-          camera.lookAt(0, camYPos, 0)
-      }, 
-    })
-
-  }, [])
 
   return (
     <group {...props} dispose={null}>
