@@ -40,6 +40,7 @@ const CanvasContainer = () => {
         start: "top bottom", 
         end: "top top", 
         scrub: true, 
+        // snap: 0.5
       }
     })
 
@@ -49,12 +50,12 @@ const CanvasContainer = () => {
       x: 10, 
     })
     
-
     cameraRotationTL.to(camera.rotation, {
       y: Math.PI / 2, 
     }).to(camera.rotation, {
       y: Math.PI
     })
+
   }, [])
 
   return ( 
