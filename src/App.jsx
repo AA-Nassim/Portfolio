@@ -21,10 +21,10 @@ const App = () => {
     <main className='max-w-7xl mx-auto section-container'>
       <Navbar />
       <CanvasContainer />
-        <Hero /> 
-        <About />
-        <Skills /> 
-        <Experiences /> 
+      <Hero /> 
+      <About />
+      <Skills /> 
+      <Experiences /> 
       <Footer />
     </main>
   </ReactLenis>

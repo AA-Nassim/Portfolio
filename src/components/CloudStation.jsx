@@ -1,13 +1,33 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useControls } from 'leva'
 
 export default function CloudStation(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models/cloud_station.glb')
-  const { actions } = useAnimations(animations, group)
+  const { actions, names } = useAnimations(animations, group)
+  
+  materials.sky_MAT.transparent = true
+  materials.sky_MAT.opacity = 0
+
+  materials.hills_MAT.transparent = true
+  materials.hills_MAT.opacity = 0
+
+  materials.hill_1_3_MAT.transparent = true
+  materials.hill_1_3_MAT.opacity = 0
+
+  materials.hill_2_4_MAT.transparent = true
+  materials.hill_2_4_MAT.opacity = 0
+
+  materials.EVSB_FISHfish_MAT.transparent = true
+
+  useEffect(() => {
+    actions[names[0]].reset().fadeIn(0.5).play()
+  })
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} position={[10, 3.5, 11]} rotation={[0, Math.PI, 0]}>
+      
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.401}>
           <group name="f2aeabd0fe4a43bda9a61acf7a5a4134fbx" rotation={[Math.PI / 2, 0, 0]}>
@@ -34,6 +54,7 @@ export default function CloudStation(props) {
                         material={materials.hills_MAT}
                       />
                     </group>
+                    
                     <group name="house_1_GEO">
                       <group name="roof_GEO">
                         <mesh
@@ -54,14 +75,16 @@ export default function CloudStation(props) {
                         />
                       </group>
                     </group>
-                    <group name="house_2_GEO">
-                      <group name="roof_GEO_1">
+
+                    <group name="house_2_GEO" >
+                      <group name="roof_GEO_1" >
                         <mesh
                           name="roof_GEO_hill_1_3_MAT_0_1"
                           castShadow
                           receiveShadow
                           geometry={nodes.roof_GEO_hill_1_3_MAT_0_1.geometry}
                           material={materials.hill_1_3_MAT}
+                          
                         />
                       </group>
                       <group name="walls_GEO_1">
@@ -74,6 +97,7 @@ export default function CloudStation(props) {
                         />
                       </group>
                     </group>
+
                     <group name="house_3_GEO">
                       <group name="roof_GEO_2">
                         <mesh
@@ -94,6 +118,7 @@ export default function CloudStation(props) {
                         />
                       </group>
                     </group>
+
                     <group name="stairs_GEO">
                       <group name="pCube1">
                         <mesh
@@ -317,6 +342,7 @@ export default function CloudStation(props) {
                       </group>
                     </group>
                   </group>
+
                   <group name="hill_2">
                     <group name="sign_1">
                       <group name="pCylinder4">
@@ -468,6 +494,7 @@ export default function CloudStation(props) {
                       />
                     </group>
                   </group>
+                  
                   <group name="hill_3">
                     <group name="bridge">
                       <group name="bridgePlanks">
@@ -1093,6 +1120,7 @@ export default function CloudStation(props) {
                       />
                     </group>
                   </group>
+                  
                   <group name="hill_4">
                     <group
                       name="sign1"
@@ -1183,15 +1211,18 @@ export default function CloudStation(props) {
                       />
                     </group>
                   </group>
-                  <group name="skybox_GEO" position={[0.218, 0.315, -3.777]} scale={15.78}>
+                  
+                  <group name="skybox_GEO"  scale={20}>
                     <mesh
                       name="skybox_GEO_sky_MAT_0"
                       castShadow
                       receiveShadow
                       geometry={nodes.skybox_GEO_sky_MAT_0.geometry}
                       material={materials.sky_MAT}
+                      renderOrder={-10}
                     />
                   </group>
+                  
                   <group name="EVSB_FISHEVSB_FISH">
                     <group name="EVSB_FISHGEO">
                       <group name="EVSB_FISHbody_GEO" />
@@ -1242,7 +1273,7 @@ export default function CloudStation(props) {
                         <group name="Object_299" />
                       </group>
                     </group>
-                  </group>
+                  </group> 
                   <group name="EVSB_FISH1EVSB_FISH">
                     <group name="EVSB_FISH1GEO">
                       <group name="EVSB_FISH1body_GEO" />

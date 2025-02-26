@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber';
+import React, { useEffect, useLayoutEffect } from 'react'
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Suspense } from 'react';
 import Creature from '../components/Creature';
-import { CameraControls, Html, OrbitControls, Scroll, ScrollControls, Sphere, useHelper } from '@react-three/drei';
+import { GizmoHelper, GizmoViewport } from '@react-three/drei';
 import Tea from '../components/Tea';
 import CanvasLoader from '../components/CanvasLoader';
 import SpaceBoyLaying from './SpaceBoyLaying';
@@ -22,17 +22,6 @@ const CanvasContainer = () => {
   camera.position.set(0,5,-10)
 
   useGSAP(() => {
-
-    let cameraRotationTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".third-section", 
-        endTrigger: ".fourth-section", 
-        start: "top bottom", 
-        end: "top top", 
-        scrub: true, 
-      }
-    })
-
     let cameraPositionTL = gsap.timeline({
       scrollTrigger: {
         trigger: ".second-section", 
@@ -43,6 +32,23 @@ const CanvasContainer = () => {
         // snap: 0.5
       }
     })
+
+    let cameraRotationTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".third-section", 
+        endTrigger: ".fourth-section", 
+        start: "top bottom", 
+        end: "top top", 
+        scrub: true, 
+      }
+      // , 
+      // onComplete: () => {
+      //   console.log(camera.position)
+      //   console.log(camera.rotation)
+      // }
+    })
+
+
 
     cameraPositionTL.to(camera.position, {
       z:5
@@ -62,10 +68,14 @@ const CanvasContainer = () => {
     <div className='w-full h-full fixed top-0 left-0 -z-10'>
       {/* <Leva />    */}
       <Canvas camera={camera} className='w-full h-full' >
-          <Suspense fallback={<CanvasLoader />}>
-              <SpaceBoyStanding />
-              <CloudStation position={[10, 2, 15]} rotation={[0, 180, 0]}/>
-          </Suspense>                
+        <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+          <GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="black" />
+        </GizmoHelper>
+        <Suspense fallback={<CanvasLoader />}>
+            <SpaceBoyStanding />  
+            {/* <CloudStation position={[Pos.posX, Pos.posY, Pos.posZ]} rotation={[Rot.rotX, Rot.rotY, Rot.rotZ]}/> */}
+            <CloudStation/>
+        </Suspense>                
       </Canvas>
     </div>     
 
