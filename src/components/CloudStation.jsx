@@ -1,28 +1,69 @@
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useControls } from 'leva'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { useFrame, useThree } from '@react-three/fiber'
+
 
 export default function CloudStation(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models/cloud_station.glb')
   const { actions, names } = useAnimations(animations, group)
   
+  const camera = useThree(state => state.camera)
+
   materials.sky_MAT.transparent = true
   materials.sky_MAT.opacity = 0
 
   materials.hills_MAT.transparent = true
-  materials.hills_MAT.opacity = 0
+  // materials.hills_MAT.opacity = 0
 
   materials.hill_1_3_MAT.transparent = true
-  materials.hill_1_3_MAT.opacity = 0
+  // materials.hill_1_3_MAT.opacity = 0
 
   materials.hill_2_4_MAT.transparent = true
-  materials.hill_2_4_MAT.opacity = 0
+  // materials.hill_2_4_MAT.opacity = 0
 
   materials.EVSB_FISHfish_MAT.transparent = true
 
+
+  const hillRef_1 = useRef()
+  const hillRef_2 = useRef()
+  const hillRef_3 = useRef()
+  const hillRef_4 = useRef()
+
   useEffect(() => {
-    actions[names[0]].reset().fadeIn(0.5).play()
+    actions[names[0]].reset().fadeIn(0.5).play() 
+  })
+
+
+  useGSAP(() => {
+
+    gsap.to(materials.sky_MAT, {
+      opacity: 1, 
+      scrollTrigger: {
+        trigger: ".experience-animation", 
+        start: "top 30%", 
+        end: "20% 30%",
+        scrub: true,
+      }
+    }, [])
+
+    gsap.to([hillRef_1.current.position, hillRef_2.current.position, hillRef_3.current.position, hillRef_4.current.position], {
+      y: 0, 
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".experience-animation", 
+        start: "top 30%", 
+        end: "40% 30%",
+        scrub: true,
+      }
+    })
+
+    
+
+    materials.sky_MAT.opacity = 0
   })
 
   return (
@@ -35,13 +76,15 @@ export default function CloudStation(props) {
               <group name="RootNode">
                 <group name="Object_4">
                   <primitive object={nodes._rootJoint} />
-                  <skinnedMesh
+                  {/* Comenting this because it is broken (not attached to the hill) */}
+                  {/* <skinnedMesh
                     name="Object_6"
                     geometry={nodes.Object_6.geometry}
                     material={materials.hill_1_3_MAT}
                     skeleton={nodes.Object_6.skeleton}
-                  />
-                  <group name="hill_1">
+                  /> */}
+
+                  <group name="hill_1" ref={hillRef_1} position={[0, -50, 0]}>
                     <group
                       name="hill_1_GEO"
                       position={[0.231, 0.626, 0.793]}
@@ -55,69 +98,7 @@ export default function CloudStation(props) {
                       />
                     </group>
                     
-                    <group name="house_1_GEO">
-                      <group name="roof_GEO">
-                        <mesh
-                          name="roof_GEO_hill_1_3_MAT_0"
-                          castShadow
-                          receiveShadow
-                          geometry={nodes.roof_GEO_hill_1_3_MAT_0.geometry}
-                          material={materials.hill_1_3_MAT}
-                        />
-                      </group>
-                      <group name="walls_GEO">
-                        <mesh
-                          name="walls_GEO_hill_1_3_MAT_0"
-                          castShadow
-                          receiveShadow
-                          geometry={nodes.walls_GEO_hill_1_3_MAT_0.geometry}
-                          material={materials.hill_1_3_MAT}
-                        />
-                      </group>
-                    </group>
-
-                    <group name="house_2_GEO" >
-                      <group name="roof_GEO_1" >
-                        <mesh
-                          name="roof_GEO_hill_1_3_MAT_0_1"
-                          castShadow
-                          receiveShadow
-                          geometry={nodes.roof_GEO_hill_1_3_MAT_0_1.geometry}
-                          material={materials.hill_1_3_MAT}
-                          
-                        />
-                      </group>
-                      <group name="walls_GEO_1">
-                        <mesh
-                          name="walls_GEO_hill_1_3_MAT_0_1"
-                          castShadow
-                          receiveShadow
-                          geometry={nodes.walls_GEO_hill_1_3_MAT_0_1.geometry}
-                          material={materials.hill_1_3_MAT}
-                        />
-                      </group>
-                    </group>
-
-                    <group name="house_3_GEO">
-                      <group name="roof_GEO_2">
-                        <mesh
-                          name="roof_GEO_hill_1_3_MAT_0_2"
-                          castShadow
-                          receiveShadow
-                          geometry={nodes.roof_GEO_hill_1_3_MAT_0_2.geometry}
-                          material={materials.hill_1_3_MAT}
-                        />
-                      </group>
-                      <group name="walls_GEO_2">
-                        <mesh
-                          name="walls_GEO_hill_1_3_MAT_0_2"
-                          castShadow
-                          receiveShadow
-                          geometry={nodes.walls_GEO_hill_1_3_MAT_0_2.geometry}
-                          material={materials.hill_1_3_MAT}
-                        />
-                      </group>
-                    </group>
+                    
 
                     <group name="stairs_GEO">
                       <group name="pCube1">
@@ -343,7 +324,7 @@ export default function CloudStation(props) {
                     </group>
                   </group>
 
-                  <group name="hill_2">
+                  <group name="hill_2" ref={hillRef_2} position={[0, -150, 0]}>
                     <group name="sign_1">
                       <group name="pCylinder4">
                         <mesh
@@ -495,7 +476,7 @@ export default function CloudStation(props) {
                     </group>
                   </group>
                   
-                  <group name="hill_3">
+                  <group name="hill_3" ref={hillRef_3} position={[0, -200, 0]}>
                     <group name="bridge">
                       <group name="bridgePlanks">
                         <group name="pCube16">
@@ -1121,7 +1102,7 @@ export default function CloudStation(props) {
                     </group>
                   </group>
                   
-                  <group name="hill_4">
+                  <group name="hill_4" ref={hillRef_4} position={[0, -100, 0]}>
                     <group
                       name="sign1"
                       position={[2.844, 5.425, -9.744]}
@@ -1211,6 +1192,7 @@ export default function CloudStation(props) {
                       />
                     </group>
                   </group>
+                  
                   
                   <group name="skybox_GEO"  scale={20}>
                     <mesh
