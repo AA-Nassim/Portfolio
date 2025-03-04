@@ -3,6 +3,16 @@ import gsap from 'gsap'
 import React from 'react'
 
 
+const ExperienceContent = (props) => {
+  return (
+    <div className={'h-screen w-full c-space flex items-center justify-center' + ' ' + props.addClass}>
+      <div className='h-1/2 w-full bg-blue-600'>
+        Experience
+      </div>
+    </div>
+  )
+}
+
 const ThirdExperience = () => {
 
   useGSAP(() => {
@@ -32,7 +42,7 @@ const ThirdExperience = () => {
 
   return (
     <div className='h-screen third-experience bg-transparent'>
-      Experience 3
+      <ExperienceContent addClass='third-experience' />
     </div>
   )
 }
@@ -41,21 +51,9 @@ const Experiences = () => {
   return (
     <section className='w-screen fourth-section text-white-800'>
       <div className='h-screen experience-animation'>
-        sosig
       </div>
-
-      <div className='h-screen first-experience'>
-        Experience 1
-      </div>
-
-      <div className='h-screen second-experience'>
-        Experience 2
-      </div>
-
-      {/* <div className='h-screen third-experience'>
-        Experience 3
-      </div> */}
-
+      <ExperienceContent addClass='first-experience'/> 
+      <ExperienceContent addClass='second-experience'/> 
       <ThirdExperience /> 
     </section>
   )
