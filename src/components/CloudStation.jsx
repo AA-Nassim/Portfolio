@@ -17,13 +17,20 @@ export default function CloudStation(props) {
   materials.sky_MAT.opacity = 0
 
   materials.hills_MAT.transparent = true
-  // materials.hills_MAT.opacity = 0
+  materials.hills_MAT.opacity = 0.8
+
+
 
   materials.hill_1_3_MAT.transparent = true
-  // materials.hill_1_3_MAT.opacity = 0
+  materials.hill_1_3_MAT.opacity = 1
+
+
 
   materials.hill_2_4_MAT.transparent = true
-  // materials.hill_2_4_MAT.opacity = 0
+  materials.hill_2_4_MAT.opacity = 1
+
+
+
 
   materials.EVSB_FISHfish_MAT.transparent = true
 
@@ -67,9 +74,9 @@ export default function CloudStation(props) {
   })
 
   return (
-    <group ref={group} {...props} dispose={null} position={[10, 3.5, 11]} rotation={[0, Math.PI, 0]}>
+    <group ref={group} {...props} dispose={null} position={[10, 3.5, 11]} rotation={[0, Math.PI, 0]} >
       
-      <group name="Sketchfab_Scene">
+      <group name="Sketchfab_Scene" >
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.401}>
           <group name="f2aeabd0fe4a43bda9a61acf7a5a4134fbx" rotation={[Math.PI / 2, 0, 0]}>
             <group name="Object_2">
@@ -97,11 +104,10 @@ export default function CloudStation(props) {
                         material={materials.hills_MAT}
                       />
                     </group>
-                    
-                    
+                       
 
                     <group name="stairs_GEO">
-                      <group name="pCube1">
+                      {/* <group name="pCube1">
                         <mesh
                           name="pCube1_hill_1_3_MAT_0"
                           castShadow
@@ -109,7 +115,7 @@ export default function CloudStation(props) {
                           geometry={nodes.pCube1_hill_1_3_MAT_0.geometry}
                           material={materials.hill_1_3_MAT}
                         />
-                      </group>
+                      </group> */}
                       <group name="pCube2">
                         <mesh
                           name="pCube2_hill_1_3_MAT_0"
@@ -174,6 +180,7 @@ export default function CloudStation(props) {
                         />
                       </group>
                     </group>
+                    
                     <group name="sign">
                       <group name="pCylinder3">
                         <mesh
@@ -221,6 +228,7 @@ export default function CloudStation(props) {
                         />
                       </group>
                     </group>
+
                     <group name="cloud1">
                       <mesh
                         name="cloud1_hill_1_3_MAT_0"
@@ -230,6 +238,7 @@ export default function CloudStation(props) {
                         material={materials.hill_1_3_MAT}
                       />
                     </group>
+
                     <group name="cloud2">
                       <mesh
                         name="cloud2_hill_1_3_MAT_0"
@@ -239,8 +248,9 @@ export default function CloudStation(props) {
                         material={materials.hill_1_3_MAT}
                       />
                     </group>
+
                     <group name="rocks">
-                      <group name="rock1">
+                      {/* <group name="rock1">
                         <mesh
                           name="rock1_hill_1_3_MAT_0"
                           castShadow
@@ -248,8 +258,8 @@ export default function CloudStation(props) {
                           geometry={nodes.rock1_hill_1_3_MAT_0.geometry}
                           material={materials.hill_1_3_MAT}
                         />
-                      </group>
-                      <group name="rock2">
+                      </group> */}
+                      {/* <group name="rock2">
                         <mesh
                           name="rock2_hill_1_3_MAT_0"
                           castShadow
@@ -293,8 +303,8 @@ export default function CloudStation(props) {
                           geometry={nodes.rock6_hill_1_3_MAT_0.geometry}
                           material={materials.hill_1_3_MAT}
                         />
-                      </group>
-                      <group name="rock7">
+                      </group> */}
+                      {/* <group name="rock7">
                         <mesh
                           name="rock7_hill_1_3_MAT_0"
                           castShadow
@@ -302,7 +312,7 @@ export default function CloudStation(props) {
                           geometry={nodes.rock7_hill_1_3_MAT_0.geometry}
                           material={materials.hill_1_3_MAT}
                         />
-                      </group>
+                      </group> */}
                       <group name="rock8">
                         <mesh
                           name="rock8_hill_1_3_MAT_0"
@@ -363,7 +373,8 @@ export default function CloudStation(props) {
                         />
                       </group>
                     </group>
-                    <group name="windmillBase">
+                    
+                    {/* <group name="windmillBase">
                       <mesh
                         name="windmillBase_hill_2_4_MAT_0"
                         castShadow
@@ -452,7 +463,8 @@ export default function CloudStation(props) {
                           </group>
                         </group>
                       </group>
-                    </group>
+                    </group> */}
+
                     <group name="cloud3">
                       <mesh
                         name="cloud3_hill_2_4_MAT_0"
@@ -987,7 +999,7 @@ export default function CloudStation(props) {
                         />
                       </group>
                     </group>
-                    <group name="sign_2">
+                    {/* <group name="sign_2">
                       <group name="pCylinder3_1">
                         <mesh
                           name="pCylinder3_hill_1_3_MAT_0_1"
@@ -1033,7 +1045,7 @@ export default function CloudStation(props) {
                           material={materials.hill_1_3_MAT}
                         />
                       </group>
-                    </group>
+                    </group> */}
                     <group name="flags1">
                       <mesh
                         name="flags1_hill_1_3_MAT_0"
@@ -1088,6 +1100,7 @@ export default function CloudStation(props) {
                         material={materials.hill_1_3_MAT}
                       />
                     </group>
+                    
                     <group
                       name="hill_3_GEO"
                       position={[-3.344, 5.884, -5.603]}

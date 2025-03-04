@@ -14,7 +14,7 @@ import CloudStation from './CloudStation';
 const CanvasContainer = () => {
   let camera = new PerspectiveCamera()
   camera.fov = 75
-  camera.near = 0.1
+  camera.near = 0.01
   camera.far = 1000 
   camera.position.set(0,5,-10)
 
