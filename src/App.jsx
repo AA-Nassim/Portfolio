@@ -24,8 +24,14 @@ const App = () => {
       <Navbar />
       <CanvasContainer />
       <Hero /> 
+      <div className='h-screen animation-hero-to-about'>
+      </div>
       <About />
+      <div className='h-screen animation-about-to-skills'>
+      </div>
       <Skills /> 
+      <div className='h-screen animation-skills-to-work'>
+      </div>
       <Experiences /> 
       <Footer />
     </main>

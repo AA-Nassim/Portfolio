@@ -50,7 +50,7 @@ export default function CloudStation(props) {
     gsap.to(materials.sky_MAT, {
       opacity: 1, 
       scrollTrigger: {
-        trigger: ".experience-animation", 
+        trigger: ".animation-skills-to-work", 
         start: "top 30%", 
         end: "20% 30%",
         scrub: true,
@@ -61,7 +61,7 @@ export default function CloudStation(props) {
       y: 0, 
       ease: "power1.out",
       scrollTrigger: {
-        trigger: ".experience-animation", 
+        trigger: ".animation-skills-to-work", 
         start: "top 30%", 
         end: "40% 30%",
         scrub: true,

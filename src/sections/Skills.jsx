@@ -19,13 +19,12 @@ const Skills = () => {
   }, [])
 
   return (
-    <section className='w-screen h-[200vh] third-section text-white-800 c-space flex flex-col gap-4'>
+    <section className='w-screen h-screen third-section text-white-800 c-space flex flex-col gap-4'>
       
       <SkillContainter id="Skill1" content={"1 : interet xr "}/>
       <SkillContainter id="Skill2" content={"JA2 : casé formation + savoir2"}/>
       <SkillContainter id="Skill3" content={"3 :A true master is an eternal student."}/>
-      <div className='h-screen animation-skills-to-work'>
-      </div>
+
     </section>
   )
 }
