@@ -7,7 +7,7 @@ const ExperienceContent = (props) => {
   return (
     <div className={'h-screen w-full c-space flex items-center justify-center' + ' ' + props.addClass}>
       <div className='h-1/2 w-full bg-blue-600'>
-        Experience
+        Project 1
       </div>
     </div>
   )
@@ -52,7 +52,7 @@ const Experiences = () => {
     <section className='w-screen fourth-section text-white-800'>
       <div className='h-screen experience-animation'>
       </div>
-      <ExperienceContent addClass='first-experience'/> 
+      <ExperienceContent addClass='first-experience' textContent=""/> 
       <ExperienceContent addClass='second-experience'/> 
       <ThirdExperience /> 
     </section>
