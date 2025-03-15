@@ -26,6 +26,14 @@ export default {
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
       },
+      animation: {
+        'border': 'border 4s linear infinite',
+      },
+      keyframes: {
+          'border': {
+              to: { '--border-angle': '360deg' },
+          }
+      }       
     },
   },
   plugins: [],

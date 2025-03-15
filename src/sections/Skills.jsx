@@ -6,8 +6,19 @@ const SkillContainter = (props) => {
   
 
   return (
-    <div className='w-[50%] h-[30vh] border-2 rounded'>
-      {props.content}   
+    <div className='w-[100%] h-[30vh] p-5 relative'>
+      <p className='xl:text-[5rem] md:text-[4rem] sm:text-[3.5rem] text-[3rem] font-generalsans 
+      font-black text-[#4f4f4f]
+
+      absolute -z-10 top-[-2.5rem]'>
+        BOGOS Binted TITLE
+      </p>
+      <p className='sm:text-3xl text-2xl 
+      font-medium  
+      font-generalsans 
+      text-white'>
+        Jiji la morozo
+      </p>
     </div>
   )
 }

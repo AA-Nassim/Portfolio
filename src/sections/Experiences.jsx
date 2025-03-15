@@ -31,10 +31,18 @@ const ExperienceContent = (props) => {
   }, [])
 
   return (
-    <div className='h-screen w-full c-space experience-content flex justify-center'>
-      <div ref={ExperiencePanelRef} className='flex flex-col md:flex-row justify-center rounded-[1rem] overflow-hidden'>
-        <div className='h-full md:w-[40%] bg-red-600  p-5'>
-         <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
+    <div className='h-screen w-full c-space xl:pl-[15rem] xl:pr-[15rem] experience-content flex justify-center'>
+      <div></div>
+      <div ref={ExperiencePanelRef} className=' 
+      w-full h-full flex flex-col md:flex-row justify-center p-5
+      rounded-[1rem] overflow-hidden
+      bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+      shadow-lg shadow-purple-400
+      border-2 border-purple-400
+      '>
+
+        <div className='h-full md:w-[40%]'>
+        <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
             JAMBOUR
           </p>
           <p className='text-left xl:text-2xl md:text-xl sm:text-l text-m font-generalsans !leading-normal text-white'>
@@ -42,10 +50,12 @@ const ExperienceContent = (props) => {
           </p>  
         </div>
 
-        <div className='h-auto  md:h-full w-auto bg-yellow-600'>
-        <video  autoPlay loop muted className='h-[100%] w-full'>
-          <source src='./assets/Demo_CodeDelta.mp4' type='video/mp4'/>
-        </video>
+        <div className='h-auto  md:h-full w-full
+        flex justify-end
+        '>
+          <video  autoPlay loop muted className='h-[100%] w-auto justify-end rounded-[1rem]'>
+            <source src='./assets/Demo_CodeDelta.mp4' type='video/mp4'/>
+          </video>
         </div>
 
       </div>

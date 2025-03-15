@@ -13,6 +13,12 @@ body {
   font-family: 'General Sans', sans-serif;
 }
 
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+
 @layer utilities {
   .c-space {
     @apply sm:px-10 px-5;
