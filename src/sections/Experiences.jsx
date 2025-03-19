@@ -25,14 +25,12 @@ const ExperienceContent = (props) => {
         start: "top 35%",
         end : "top 10%", 
         toggleActions: "restart reverse restart reverse", 
-        markers: true, 
       }
     })
   }, [])
 
   return (
     <div className='h-screen w-full c-space xl:pl-[15rem] xl:pr-[15rem] experience-content flex justify-center'>
-      <div></div>
       <div ref={ExperiencePanelRef} className=' 
       w-full h-full flex flex-col md:flex-row justify-center p-5
       rounded-[1rem] overflow-hidden
@@ -41,23 +39,23 @@ const ExperienceContent = (props) => {
       border-2 border-purple-400
       '>
 
-        <div className='h-full md:w-[40%]'>
-        <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
-            JAMBOUR
-          </p>
-          <p className='text-left xl:text-2xl md:text-xl sm:text-l text-m font-generalsans !leading-normal text-white'>
-            JAMBOURJBOURQSD SQBD QISB DYQBS DYHQSDHSHQDQSDUO QHSDUHQSDUH QSUDUQHSD QHD QDSQ
-          </p>  
-        </div>
+          <div className='h-full w-[40%]'>
+            <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
+              JAMBOUR
+            </p>
+            <p className='text-left xl:text-xl md:text-l sm:text-m text-s font-generalsans !leading-normal text-white'>
+              JAMBOURJBOURQSD SQBD QISB DYQBS DYHQSDHSHQDQSDUO QHSDUHQSDUH QSUDUQHSD QHD QDSQ
+            </p>  
+          </div>
 
-        <div className='h-auto  md:h-full w-full
-        flex justify-end
-        '>
-          <video  autoPlay loop muted className='h-[100%] w-auto justify-end rounded-[1rem]'>
-            <source src='./assets/Demo_CodeDelta.mp4' type='video/mp4'/>
-          </video>
-        </div>
-
+          <div className='h-auto  md:h-full w-full
+          flex justify-end
+          '>
+            <video  autoPlay loop muted className='h-[100%] w-auto justify-end rounded-[1rem]'>
+              <source src='./assets/Demo_CodeDelta.mp4' type='video/mp4'/>
+            </video>
+          </div>
+          
       </div>
     </div>
   )
@@ -93,12 +91,18 @@ const Experiences = () => {
     <section className='w-screen fourth-section text-white-800'>
       <div className='h-screen animation-experience-to-exp-1'>
       </div>
-      <ExperienceContent /> 
+      <ExperienceContent 
+      contentTitle={`Code Delta`} 
+      contentText={``} 
+      contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
+      
       <div className='h-screen animation-exp-1-to-exp-2'>
       </div>
+      
       <ExperienceContent /> 
       <div ref={transitionDivRef} className='h-screen animation-exp-2-to-exp-3'>
       </div>
+      
       <ExperienceContent />
     </section>
   )

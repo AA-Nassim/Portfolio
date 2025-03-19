@@ -66,12 +66,16 @@ const About = () => {
 
     return ( 
         <section className='h-screen w-screen c-space  second-section text-white-800 pt-10'>
-            <p id='AboutText' className='sm:text-3xl text-xl font-medium text-white text-center font-generalsans split-text-target' 
-            style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"}}>
-                Paragraphe de présentation (formation + interet ) Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br />
-                Ducimus, unde molestiae repudiandae maiores ratione expedita in, temporibus laboriosam sint quisquam, incidunt doloribus beatae.<br />
-                Nemo porro doloribus quisquam reprehenderit, minima illo?<br />
-            </p>
+            <div className='h-full xl:px-52'>
+                <p id='AboutText' className='sm:text-3xl text-xl font-medium text-white text-center font-generalsans split-text-target'>
+                With a Master's degree in Computer Science focused on AI and Human-Computer Interaction, I’m eager to channel my expertise into the world of immersive technologies. 
+                <br></br>
+                I thrive in R&D environments where curiosity drives innovation, and I’m passionate about exploring new ways technology can enhance human experiences.
+                <br></br> 
+                While I’m based in Paris, I’m fully equipped to collaborate remotely, bringing adaptability and fresh ideas to every project.
+                </p>
+            </div>
+            
         </section>
      );
 }
