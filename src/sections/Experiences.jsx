@@ -13,7 +13,7 @@ const ExperienceContent = (props) => {
       opacity: 0, 
     }, {
       width: "100%",
-      height: "50%",
+      height: "60%",
       opacity: 1, 
 
       duration: 0.5, 
@@ -22,9 +22,10 @@ const ExperienceContent = (props) => {
       scrollTrigger: {
         trigger: ExperiencePanelRef.current, 
         // pin: PanelParenRef.current,
-        start: "top 35%",
+        start: "top 50%",
         end : "top 10%", 
         toggleActions: "restart reverse restart reverse", 
+        markers: true, 
       }
     })
   }, [])
@@ -32,29 +33,29 @@ const ExperienceContent = (props) => {
   return (
     <div className='h-screen w-full c-space xl:pl-[15rem] xl:pr-[15rem] experience-content flex justify-center'>
       <div ref={ExperiencePanelRef} className=' 
-      w-full h-full flex flex-col md:flex-row justify-center p-5
+      w-full h-auto flex flex-col md:flex-row justify-center p-5 gap-5
       rounded-[1rem] overflow-hidden
       bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
       shadow-lg shadow-purple-400
       border-2 border-purple-400
       '>
 
-          <div className='h-full w-[40%]'>
-            <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
-              JAMBOUR
-            </p>
-            <p className='text-left xl:text-xl md:text-l sm:text-m text-s font-generalsans !leading-normal text-white'>
-              JAMBOURJBOURQSD SQBD QISB DYQBS DYHQSDHSHQDQSDUO QHSDUHQSDUH QSUDUQHSD QHD QDSQ
-            </p>  
-          </div>
+        <div className='h-full md:w-[30%] w-full'>
+          <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
+            {props.contentTitle}
+          </p>
+          <p className='text-justify  md:text-xl sm:text-l text-m font-generalsans !leading-normal text-white'>
+            {props.contentText}
+          </p>  
+        </div>
 
-          <div className='h-auto  md:h-full w-full
-          flex justify-end
-          '>
-            <video  autoPlay loop muted className='h-[100%] w-auto justify-end rounded-[1rem]'>
-              <source src='./assets/Demo_CodeDelta.mp4' type='video/mp4'/>
-            </video>
-          </div>
+        <div className='h-auto  md:h-full md:max-w-[70%]
+        flex justify-end
+        '>
+          <video  autoPlay loop muted className='h-[100%] w-auto justify-end rounded-[1rem]'>
+            <source src={props.contentVideo} type='video/mp4'/>
+          </video>
+        </div>
           
       </div>
     </div>
@@ -93,17 +94,38 @@ const Experiences = () => {
       </div>
       <ExperienceContent 
       contentTitle={`Code Delta`} 
-      contentText={``} 
+      contentText={`
+        I contributed to the development of a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
+        My role involved actively participating in the implementation of tracking systems, creating AR challenges, and developing the backend for video stream management. 
+        This project was built using Unity and with the ZED SDK for the tracking.  
+      `} 
       contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
       
       <div className='h-screen animation-exp-1-to-exp-2'>
       </div>
       
-      <ExperienceContent /> 
+      <ExperienceContent 
+      contentTitle={`Biotherm Up For Summer`} 
+      contentText={`
+        I worked on an AR mirror experience for an advertising campaign. The goal was to complete three sports challenges to win prizes. 
+        I contributed to the development of tracking methods, challenges, and the user interface. 
+        The project was developed using Unity, with tracking implemented via MediaPipe.
+      `} 
+      contentVideo={`./assets/Demo_Biotherm.mp4`}/> 
+
+
       <div ref={transitionDivRef} className='h-screen animation-exp-2-to-exp-3'>
       </div>
       
-      <ExperienceContent />
+      <ExperienceContent 
+      contentTitle={`CoVR`} 
+      contentText={`
+        CoVR is a research project in HCI aimed at exploring haptic feedback methods in VR. 
+        I contributed to the creation of an experience for the Science Festival. 
+        The project was developed using Unity with motion capture (OptiTrack).
+      `} 
+      contentVideo={`./assets/Demo_isir.mp4`}/> 
+
     </section>
   )
 }

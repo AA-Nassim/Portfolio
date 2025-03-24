@@ -9,17 +9,28 @@ export default function SpaceBoyStanding(props) {
   const { nodes, materials } = useGLTF('/models/space_boy-standing.glb')
   const movableObjectsRef = useRef()
 
-
   useGSAP(() => {
     movableObjectsRef.current.children.forEach((child, i) => {
+      let randomNumber = gsap.utils.random(500, 700, 20)
       gsap.to(child.position, {
-        duration: 1, 
-        y: '+=500', 
+        y: '+=' + randomNumber.toString(), 
         scrollTrigger: {
           trigger: ".third-section", 
-          scrub: true
+          scrub: 0.8
         }
       })
+      if (i != 0){
+        let randomRot = gsap.utils.random(3.14, 6.28)
+
+        gsap.to(child.rotation, {
+          y: '+=3.14' + randomRot.toString(), 
+          scrollTrigger: {
+            trigger: ".third-section", 
+            scrub: 0.8
+          }
+        })
+      }
+      
     })
   }, [])
 
@@ -75,156 +86,168 @@ export default function SpaceBoyStanding(props) {
           scale={[100, 100, 1.891]}
         />
         
-        <group ref={movableObjectsRef}>
-        {/* Stars */}
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.particles_Material002_0.geometry}
-          material={materials['Material.002']}
-          position={[489.69, 793.811, 355.293]}
-          rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
-          scale={20.408}
-        />
-        {/* White Planet 1 */}
-        <group>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Sphere_Material001_0.geometry}
-            material={materials['Material.001']}
-            position={[375.469, 427.948, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={62.402}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Sphere001_Material002_0.geometry}
-            material={materials['Material.002']}
-            position={[375.469, 427.948, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={60.324}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Sphere004_Material002_0.geometry}
-            material={materials['Material.002']}
-            position={[375.469, 427.948, 0]}
-            rotation={[-0.688, 0, 0]}
-            scale={[104.129, 81.609, 0]}
-          />
-        </group>
         
-        {/* White Planet 2 */}
-        <group>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Sphere005_Material001_0.geometry}
-            material={materials['Material.001']}
-            position={[-341.988, 460.196, -117.028]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={62.402}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Sphere006_Material002_0.geometry}
-            material={materials['Material.002']}
-            position={[-341.988, 460.196, -117.028]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={60.324}
-          />
-        </group>
-        
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Sphere009_Material002_0.geometry}
-          material={materials['Material.002']}
-          position={[507.522, 667.594, -214.475]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={16.881}
-        />
 
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Sphere010_Material002_0.geometry}
-          material={materials['Material.002']}
-          position={[-287.442, 585.792, -311.857]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={16.881}
-        />
-        
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Sphere011_Material002_0.geometry}
-          material={materials['Material.002']}
-          position={[-553.462, 331.074, -379.067]}
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={11.437}
-        />
-        
-        {/* Planet black 1 */}
-        <group>
-          <group position={[-357.404, 392.646, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={39.706}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Sphere002_Material001_0.geometry}
-              material={materials['Material.001']}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Sphere002_Material002_0.geometry}
-              material={materials['Material.002']}
-            />
-          </group>
+        <group ref={movableObjectsRef} position={[0, 0, 0]}>
+          {/* Stars */}
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Sphere003_Material002_0.geometry}
+            geometry={nodes.particles_Material002_0.geometry}
             material={materials['Material.002']}
-            position={[-357.404, 392.646, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={41.075}
+            position={[489.69, 793.811, 355.293]}
+            rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+            scale={20.408}
           />
-        </group>
-        {/* Planet black 2 */}
-        <group>
-          <group
-            position={[199.634, 566.883, -221.001]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={39.706}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Sphere007_Material001_0.geometry}
-              material={materials['Material.001']}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Sphere007_Material002_0.geometry}
-              material={materials['Material.002']}
-            />
-          </group>
 
           <mesh
             castShadow
             receiveShadow
-            geometry={nodes.Sphere008_Material002_0.geometry}
+            geometry={nodes.particles_Material002_0.geometry}
             material={materials['Material.002']}
-            position={[199.634, 566.883, -221.001]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={41.075}
+            position={[489.69, 793.811, 355.293]}
+            scale={20.408}
           />
-        </group>
+          {/* White Planet 1 */}
+          <group>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Sphere_Material001_0.geometry}
+              material={materials['Material.001']}
+              position={[375.469, 427.948, 0]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={62.402}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Sphere001_Material002_0.geometry}
+              material={materials['Material.002']}
+              position={[375.469, 427.948, 0]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={60.324}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Sphere004_Material002_0.geometry}
+              material={materials['Material.002']}
+              position={[375.469, 427.948, 0]}
+              rotation={[-0.688, 0, 0]}
+              scale={[104.129, 81.609, 0]}
+            />
+          </group>
+          
+          {/* White Planet 2 */}
+          <group>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Sphere005_Material001_0.geometry}
+              material={materials['Material.001']}
+              position={[-341.988, 460.196, -117.028]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={62.402}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Sphere006_Material002_0.geometry}
+              material={materials['Material.002']}
+              position={[-341.988, 460.196, -117.028]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={60.324}
+            />
+          </group>
+          
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere009_Material002_0.geometry}
+            material={materials['Material.002']}
+            position={[507.522, 667.594, -214.475]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={16.881}
+          />
+
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere010_Material002_0.geometry}
+            material={materials['Material.002']}
+            position={[-287.442, 585.792, -311.857]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={16.881}
+          />
+          
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere011_Material002_0.geometry}
+            material={materials['Material.002']}
+            position={[-553.462, 331.074, -379.067]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={11.437}
+          />
+          
+          {/* Planet black 1 */}
+          <group>
+            <group position={[-357.404, 392.646, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={39.706}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Sphere002_Material001_0.geometry}
+                material={materials['Material.001']}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Sphere002_Material002_0.geometry}
+                material={materials['Material.002']}
+              />
+            </group>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Sphere003_Material002_0.geometry}
+              material={materials['Material.002']}
+              position={[-357.404, 392.646, 0]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={41.075}
+            />
+          </group>
+          
+          {/* Planet black 2 */}
+          <group>
+            <group
+              position={[199.634, 566.883, -221.001]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={39.706}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Sphere007_Material001_0.geometry}
+                material={materials['Material.001']}
+              />
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Sphere007_Material002_0.geometry}
+                material={materials['Material.002']}
+              />
+            </group>
+
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Sphere008_Material002_0.geometry}
+              material={materials['Material.002']}
+              position={[199.634, 566.883, -221.001]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={41.075}
+            />
+          </group>
         </group>
       </group>
     </group>
