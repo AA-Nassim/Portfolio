@@ -8,7 +8,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 
 export default function CloudStation(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/models/cloud_station.glb')
+  const { nodes, materials, animations } = useGLTF('./models/cloud_station.glb')
   const { actions, names } = useAnimations(animations, group)
   
   const camera = useThree(state => state.camera)
@@ -1381,4 +1381,4 @@ export default function CloudStation(props) {
   )
 }
 
-useGLTF.preload('/models/cloud_station.glb')
+useGLTF.preload('./models/cloud_station.glb')

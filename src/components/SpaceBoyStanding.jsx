@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react'
 
 
 export default function SpaceBoyStanding(props) {
-  const { nodes, materials } = useGLTF('/models/space_boy-standing.glb')
+  const { nodes, materials } = useGLTF('./models/space_boy-standing.glb')
   const movableObjectsRef = useRef()
 
   useGSAP(() => {
@@ -254,4 +254,4 @@ export default function SpaceBoyStanding(props) {
   )
 }
 
-useGLTF.preload('/models/space_boy-standing.glb')
+useGLTF.preload('./models/space_boy-standing.glb')
