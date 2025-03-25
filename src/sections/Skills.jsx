@@ -33,13 +33,13 @@ const SkillContainter = (props) => {
   return (
     <div className='md:w-[60%] w-[100%] h-[50vh] p-5 relative text-justify'>
       <p ref={SkillTitleRef} className='
-      xl:text-[4rem] md:text-[2rem] sm:text-[3.5rem] text-[3rem] font-generalsans 
+      xl:text-[5rem] md:text-[4rem] sm:text-[3.5rem] text-[3rem] font-generalsans 
       font-black text-[#4f4f4f]
       absolute -z-10 left-0 xl:top-[-3rem] md:top-[-2rem] sm:top-[-1.25rem] top-[-1rem]'
       style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"}}>
         {props.contentTitle} 
       </p>
-      <p className='sm:text-3xl text-2xl 
+      <p className='xl:text-2xl md:text-xl sm:text-xl text-l 
       font-medium  font-generalsans 
       text-white'>
       {props.contentText}

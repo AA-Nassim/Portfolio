@@ -25,7 +25,6 @@ const ExperienceContent = (props) => {
         start: "top 50%",
         end : "top 10%", 
         toggleActions: "restart reverse restart reverse", 
-        markers: true, 
       }
     })
   }, [])
@@ -66,31 +65,9 @@ const Experiences = () => {
 
   const transitionDivRef = useRef()
 
-  useGSAP(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".animation-exp-2-to-exp-3", 
-        start: "top 10%", 
-        end: "top top", 
-        scrub: true, 
-      }
-    })
-    tl.to(transitionDivRef.current, {
-      backgroundColor: "#1E0051"
-    })
-
-    tl.to(transitionDivRef.current, {
-      backgroundColor: "black"
-    })
-
-    tl.to(".GigaCanvas", {
-      display: "None",
-    })
-  }, [])
-
   return (
     <section className='w-screen fourth-section text-white-800'>
-      <div className='h-screen animation-experience-to-exp-1'>
+      <div className='h-[25vh] animation-experience-to-exp-1'>
       </div>
       <ExperienceContent 
       contentTitle={`Code Delta`} 
@@ -101,7 +78,7 @@ const Experiences = () => {
       `} 
       contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
       
-      <div className='h-screen animation-exp-1-to-exp-2'>
+      <div className='h-[25vh] animation-exp-1-to-exp-2'>
       </div>
       
       <ExperienceContent 
@@ -114,7 +91,7 @@ const Experiences = () => {
       contentVideo={`./assets/Demo_Biotherm.mp4`}/> 
 
 
-      <div ref={transitionDivRef} className='h-screen animation-exp-2-to-exp-3'>
+      <div ref={transitionDivRef} className='h-[25vh] animation-exp-2-to-exp-3'>
       </div>
       
       <ExperienceContent 
