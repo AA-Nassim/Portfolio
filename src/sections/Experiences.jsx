@@ -8,12 +8,10 @@ const ExperienceContent = (props) => {
 
   useGSAP(() => {
     gsap.fromTo(ExperiencePanelRef.current, {
-      width: "0%", 
-      height: "0%",
+      scale: 0,
       opacity: 0, 
     }, {
-      width: "100%",
-      height: "60%",
+      scale: 1, 
       opacity: 1, 
 
       duration: 0.5, 
@@ -30,7 +28,7 @@ const ExperienceContent = (props) => {
   }, [])
 
   return (
-    <div className='h-screen w-full c-space xl:pl-[15rem] xl:pr-[15rem] experience-content flex justify-center'>
+    <div className='md:h-[50%] sm:h-[85%] w-full c-space xl:pl-[15rem] xl:pr-[15rem] experience-content flex justify-center'>
       <div ref={ExperiencePanelRef} className=' 
       w-full h-auto flex flex-col md:flex-row justify-center p-5 gap-5
       rounded-[1rem] overflow-hidden

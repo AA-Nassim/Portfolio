@@ -2,7 +2,7 @@ import React from 'react'
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { GizmoHelper, GizmoViewport } from '@react-three/drei';
-import CanvasLoader from '../components/CanvasLoader';
+import CanvasLoaderThree from '../components/CanvasLoader';
 import SpaceBoyStanding from './SpaceBoyStanding';
 import { PerspectiveCamera, Vector3 } from 'three';
 import gsap from 'gsap'
@@ -184,7 +184,7 @@ const CanvasContainer = () => {
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="black" />
         </GizmoHelper>
-        <Suspense fallback={<CanvasLoader />}>
+        <Suspense fallback={<CanvasLoaderThree />}>
             <SpaceBoyStanding />  
             {/* <CloudStation position={[Pos.posX, Pos.posY, Pos.posZ]} rotation={[Rot.rotX, Rot.rotY, Rot.rotZ]}/> */}
             <CloudStation/>
