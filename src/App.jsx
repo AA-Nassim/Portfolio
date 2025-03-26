@@ -36,7 +36,6 @@ const App = () => {
         <Experiences /> 
         <Footer />
       </Suspense>                
-      
     </main>
   </ReactLenis>
   );
