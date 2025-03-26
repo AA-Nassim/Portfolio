@@ -184,11 +184,11 @@ const CanvasContainer = () => {
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="black" />
         </GizmoHelper>
-        <Suspense fallback={<CanvasLoaderThree />}>
+
             <SpaceBoyStanding />  
             {/* <CloudStation position={[Pos.posX, Pos.posY, Pos.posZ]} rotation={[Rot.rotX, Rot.rotY, Rot.rotZ]}/> */}
             <CloudStation/>
-        </Suspense>                
+                
       </Canvas>
     </div>     
 
