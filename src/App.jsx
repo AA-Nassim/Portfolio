@@ -7,11 +7,11 @@ import Footer from './sections/Foot';
 import About from './sections/About';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import CanvasLoader from './components/CanvasLoader';
 import ReactLenis from 'lenis/react';
 import Skills from './sections/Skills';
 import Experiences from './sections/Experiences';
 import CanvasContainer from './components/CanvasContainer';
+import PageLoader from './components/PageLoader';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,21 +21,33 @@ const App = () => {
   return ( 
   <ReactLenis root>
     <main className='mx-auto section-container'>
-      <Suspense fallback={<CanvasLoader />}>
         <Navbar />
+        
         <CanvasContainer />
+
         <Hero /> 
+
         <div className='h-[50vh] animation-hero-to-about'>
         </div>
+
         <About />
+
         <div className='h-screen animation-about-to-skills'>
         </div>
+
         <Skills /> 
+    
         <div className='h-[50vh] animation-skills-to-work'>
         </div>
+
         <Experiences /> 
+
+        <div className='h-[50vh] animation-work-to-footer'>
+        </div>
+
         <Footer />
-      </Suspense>                
+        
+                   
     </main>
   </ReactLenis>
   );

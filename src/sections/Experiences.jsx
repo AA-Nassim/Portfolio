@@ -19,10 +19,10 @@ const ExperienceContent = (props) => {
 
       scrollTrigger: {
         trigger: ExperiencePanelRef.current, 
-        // pin: PanelParenRef.current,
-        start: "top 50%",
-        end : "top 10%", 
+        start: "top 60%",
+        end : "top 20%", 
         toggleActions: "restart reverse restart reverse", 
+        markers: true
       }
     })
   }, [])

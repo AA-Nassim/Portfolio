@@ -47,7 +47,10 @@ export default function CloudStation(props) {
 
   useGSAP(() => {
 
-    gsap.to(materials.sky_MAT, {
+    gsap.fromTo(materials.sky_MAT, {
+      opacity: 0, 
+    }, 
+      {
       opacity: 1, 
       scrollTrigger: {
         trigger: ".animation-skills-to-work", 

@@ -86,7 +86,7 @@ const CanvasContainer = () => {
       scrollTrigger: {
         trigger: ".animation-skills-to-work", 
         start: "top bottom", 
-        end: "top top", 
+        end: "bottom bottom", 
         scrub: 0.5, 
       }
     })
@@ -104,7 +104,7 @@ const CanvasContainer = () => {
       scrollTrigger: {
         trigger: ".animation-experience-to-exp-1", 
         start: "top 50%", 
-        end: "top top",
+        end: "bottom 50%",
         scrub: 0.5,
       }
     })
@@ -117,7 +117,7 @@ const CanvasContainer = () => {
       scrollTrigger: {
         trigger: ".animation-experience-to-exp-1", 
         start: "top 50%", 
-        end: "top top",
+        end: "bottom 50%",
         scrub: 0.5,
       }
     })
@@ -134,8 +134,8 @@ const CanvasContainer = () => {
       immediateRender: false, 
       scrollTrigger: {
         trigger: ".animation-exp-1-to-exp-2", 
-        start: "top bottom", 
-        end: "top top", 
+        start: "top 50%", 
+        end: "bottom 50%", 
         scrub: 0.5, 
       }
     })
@@ -148,8 +148,8 @@ const CanvasContainer = () => {
       immediateRender: false, 
       scrollTrigger: {
         trigger: ".animation-exp-1-to-exp-2", 
-        start: "top bottom", 
-        end: "top top", 
+        start: "top 50%", 
+        end: "bottom 50%", 
         scrub: 0.5, 
       }, 
     }
@@ -167,8 +167,8 @@ const CanvasContainer = () => {
       z: 13.05359, 
       scrollTrigger: {
         trigger: ".animation-exp-2-to-exp-3", 
-        start: "top bottom", 
-        end: "top top", 
+        start: "top 50%", 
+        end: "bottom 50%", 
         scrub: 0.5, 
       }
     })
@@ -184,11 +184,9 @@ const CanvasContainer = () => {
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="black" />
         </GizmoHelper>
-
             <SpaceBoyStanding />  
             {/* <CloudStation position={[Pos.posX, Pos.posY, Pos.posZ]} rotation={[Rot.rotX, Rot.rotY, Rot.rotZ]}/> */}
             <CloudStation/>
-                
       </Canvas>
     </div>     
 
