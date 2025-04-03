@@ -181,9 +181,9 @@ const CanvasContainer = () => {
     <div className='w-full h-full fixed top-0 left-0 -z-10'>
       {/* <Leva />    */}
       <Canvas camera={camera} className='w-full h-full GigaCanvas'>
-        <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+        {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="black" />
-        </GizmoHelper>
+        </GizmoHelper> */}
             <SpaceBoyStanding />  
             {/* <CloudStation position={[Pos.posX, Pos.posY, Pos.posZ]} rotation={[Rot.rotX, Rot.rotY, Rot.rotZ]}/> */}
             <CloudStation/>

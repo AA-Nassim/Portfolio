@@ -2,11 +2,19 @@ import React, { useState } from 'react';
 import { navLinks } from '../constants';
 
 const NavItems = () => {
+    const handleClick = (scrollTarget) => {
+        gsap.to(window, {
+            duration: 5, 
+            scrollTo: scrollTarget, 
+            ease: "power2"
+        })
+    }
+    
     return (
         <ul className='nav-ul'>
             {navLinks.map(({id, href, name}) => (
                 <li key={id} className='nav-li'>
-                    <a href={href} className='nav-li_a' onClick={() => {}}>
+                    <a href={href} className='nav-li_a' onClick={() => this.handleClick(href)}>
                         {name}
                     </a>
                 </li>
@@ -15,11 +23,10 @@ const NavItems = () => {
     )
 }
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [isOpen, SetIsOpen] = useState(false)
 
     const toggleMenu = () => SetIsOpen((prevIsOpen) => !prevIsOpen);
-    
 
     return ( 
         <header className='fixed top-0 left-0 right-0 z-50 bg-black/90 h-[10%]'>

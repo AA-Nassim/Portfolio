@@ -22,7 +22,6 @@ const ExperienceContent = (props) => {
         start: "top 60%",
         end : "top 20%", 
         toggleActions: "restart reverse restart reverse", 
-        markers: true
       }
     })
   }, [])
@@ -41,7 +40,7 @@ const ExperienceContent = (props) => {
           <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
             {props.contentTitle}
           </p>
-          <p className='text-justify  md:text-xl sm:text-l text-m font-generalsans !leading-normal text-white'>
+          <p className='text-justify  md:text-xl sm:text-l text-m font-generalsans pt-[2rem] !leading-normal text-white'>
             {props.contentText}
           </p>  
         </div>
@@ -64,15 +63,16 @@ const Experiences = () => {
   const transitionDivRef = useRef()
 
   return (
-    <section className='w-screen fourth-section text-white-800'>
+    <section className='w-screen fourth-section text-white-800' id='work'>
       <div className='h-[25vh] animation-experience-to-exp-1'>
       </div>
       <ExperienceContent 
-      contentTitle={`Code Delta`} 
+      contentTitle={`ATOMIC - Code Delta`} 
       contentText={`
         I contributed to the development of a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
-        My role involved actively participating in the implementation of tracking systems, creating AR challenges, and developing the backend for video stream management. 
-        This project was built using Unity and with the ZED SDK for the tracking.  
+        My role involved actively participating in the implementation of tracking systems using a ZED camera and Mediapipe, 
+        creating the AR challenges with Unity, and developing the backend for video stream management. 
+        
       `} 
       contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
       
@@ -80,11 +80,11 @@ const Experiences = () => {
       </div>
       
       <ExperienceContent 
-      contentTitle={`Biotherm Up For Summer`} 
+      contentTitle={`ATOMIC - Up For Summer`} 
       contentText={`
-        I worked on an AR mirror experience for an advertising campaign. The goal was to complete three sports challenges to win prizes. 
-        I contributed to the development of tracking methods, challenges, and the user interface. 
-        The project was developed using Unity, with tracking implemented via MediaPipe.
+        I worked on an AR mirror experience for an advertising campaign for Biotherm. 
+        The goal was to complete three challenges to win prizes. 
+        I contributed to the development of tracking system, the challenges, and the UI. 
       `} 
       contentVideo={`./assets/Demo_Biotherm.mp4`}/> 
 
@@ -93,11 +93,11 @@ const Experiences = () => {
       </div>
       
       <ExperienceContent 
-      contentTitle={`CoVR`} 
+      contentTitle={`ISIR - CoVR`} 
       contentText={`
         CoVR is a research project in HCI aimed at exploring haptic feedback methods in VR. 
-        I contributed to the creation of an experience for the Science Festival. 
-        The project was developed using Unity with motion capture (OptiTrack).
+        I contributed to the creation of a proof of concept, where the user could interact with multiple virtual objects that were mapped to a limited number of real objects.
+        Object tracking was achieved with an OptiTrack motion capture system, and the demo was built in Unity for the Meta Quest headset.
       `} 
       contentVideo={`./assets/Demo_isir.mp4`}/> 
 
