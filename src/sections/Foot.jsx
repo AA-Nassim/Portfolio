@@ -17,15 +17,13 @@ const ButtonIcon = (props) => {
 
 const Footer = () => {
     return ( 
-        <section className='h-[50vh] w-full'>
+        <section className='h-auto w-full'>
             <footer className='w-full h-full'>
                 
-                <div className='w-full h-[50vh] -z-[5] absolute overflow-hidden'>
-                    <img src='./assets/FooterAnimation.gif' className='w-full h-[50vh] overflow-clip opacity-[0.25]'></img>
-                </div>
-                
+                <img src='./assets/FooterAnimation.gif' className='w-full h-full  -z-[5] absolute bottom-0  opacity-[0.25]'></img>
 
-                <div className='h-full w-full c-space md:pt-[10%] sm:pt-[20%] pt-[30%] 
+                <div className='h-full w-full 
+                c-space md:pt-[10%] sm:pt-[20%] pt-[30%] 
                 flex flex-col '> 
                     
                     <p className='font-generalsans text-center font-black text-white
