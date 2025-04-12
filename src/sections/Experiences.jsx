@@ -8,8 +8,8 @@ const ExperienceContent = (props) => {
 
   useGSAP(() => {
     gsap.fromTo(ExperiencePanelRef.current, {
-      scale: 0,
-      opacity: 0, 
+      scale: 0.5,
+      opacity: 0.25, 
     }, {
       scale: 1, 
       opacity: 1, 
@@ -36,16 +36,19 @@ const ExperienceContent = (props) => {
       border-2 border-purple-400
       '>
 
-        <div className='h-full md:w-[30%] w-full'>
+        <div className='h-full md:w-[40%] w-full'>
           <p className='text-left xl:text-4xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal text-white'> 
             {props.contentTitle}
           </p>
-          <p className='text-justify  md:text-xl sm:text-l text-m font-generalsans pt-[2rem] !leading-normal text-white'>
+          <p className='text-left  font-generalsans font-semibold !leading-normal text-white'>
+            {props.contentInfo}
+          </p>
+          <p className='text-justify  md:text-xl sm:text-l text-m font-generalsans pt-[1rem] !leading-normal text-white'>
             {props.contentText}
           </p>  
         </div>
 
-        <div className='h-auto  md:h-full md:max-w-[70%]
+        <div className='h-auto  md:h-full md:max-w-[60%]
         flex justify-end
         '>
           <video  autoPlay loop muted className='h-[100%] w-auto justify-end rounded-[1rem]'>
@@ -67,7 +70,8 @@ const Experiences = () => {
       <div className='h-[25vh] animation-experience-to-exp-1'>
       </div>
       <ExperienceContent 
-      contentTitle={`ATOMIC - Code Delta`} 
+      contentTitle={`Project : Code Delta`} 
+      contentInfo= {`ATOMIC - Paris | August 2024 - 2 Months`}
       contentText={`
         I contributed to the development of a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
         My role involved actively participating in the implementation of tracking systems using a ZED camera and Mediapipe, 
@@ -80,7 +84,8 @@ const Experiences = () => {
       </div>
       
       <ExperienceContent 
-      contentTitle={`ATOMIC - Up For Summer`} 
+      contentTitle={`Project : Biotherm`} 
+      contentInfo= {`ATOMIC - Paris | June 2024 - 1 Month`}
       contentText={`
         I worked on an AR mirror experience for an advertising campaign for Biotherm. 
         The goal was to complete three challenges to win prizes. 
@@ -93,7 +98,8 @@ const Experiences = () => {
       </div>
       
       <ExperienceContent 
-      contentTitle={`ISIR - CoVR`} 
+      contentTitle={`Project : CoVR`} 
+      contentInfo= {`ISIR - Paris - March 2025 - 1 Month`}
       contentText={`
         CoVR is a research project in HCI aimed at exploring haptic feedback methods in VR. 
         I contributed to the creation of a proof of concept, where the user could interact with multiple virtual objects that were mapped to a limited number of real objects.

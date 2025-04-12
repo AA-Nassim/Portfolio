@@ -34,7 +34,7 @@ const SkillContainter = (props) => {
     <div className='md:w-[60%] w-[100%] h-full p-5 relative text-justify'>
       <p ref={SkillTitleRef} className='
       xl:text-[5rem] md:text-[4rem] sm:text-[3.5rem] text-[3rem] font-generalsans 
-      font-black text-[#2b2b2b]
+      font-black text-[#4d4d4d]
       absolute -z-10 left-0 xl:top-[-3rem] md:top-[-2rem] sm:top-[-1.25rem] top-[-1rem]'
       style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"}}>
         {props.contentTitle} 

@@ -18,9 +18,9 @@ const ButtonIcon = (props) => {
 const Footer = () => {
     return ( 
         <section className='h-auto w-full'>
-            <footer className='w-full h-full'>
+            <footer className='w-full h-full relative'>
                 
-                <img src='./assets/FooterAnimation.gif' className='w-full h-full  -z-[5] absolute bottom-0  opacity-[0.25]'></img>
+                <img src='./assets/FooterAnimation.gif' className='w-full h-full -z-[5] absolute bottom-0  opacity-[0.25]'></img>
 
                 <div className='h-full w-full 
                 c-space md:pt-[10%] sm:pt-[20%] pt-[30%] 
