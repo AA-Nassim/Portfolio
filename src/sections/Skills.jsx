@@ -59,8 +59,7 @@ const Skills = () => {
       
       <SkillContainter id="Skill1" contentTitle={"Development"} 
       contentText={`I have extensive experience working with Unity, having contributed to the production side of several AR & VR products. 
-      I was also involved in multiple R&D projects, such as, the implementation of computer vision models for Unity, object tracking for Web AR applications, 
-      and some projects that many developers would refer to as "black magic".
+      I was also involved in multiple R&D projects, such as, the implementation of computer vision models for Unity, object tracking for Web AR applications.
       `}/>
       
       <SkillContainter id="Skill3" contentTitle={"Learning"} 

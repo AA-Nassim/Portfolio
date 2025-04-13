@@ -3,6 +3,28 @@ import gsap from 'gsap'
 import React, { useRef } from 'react'
 
 
+const Tag = (props) => {
+  return (
+    <div className="relative inline-flex group">
+      <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px 
+      bg-[#FF675E] 
+      rounded-xl blur-lg 
+      group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+      </div>
+
+      <p className="relative items-center justify-center 
+      px-2 py-1
+      text-sm font-bold text-purple-900 
+      transition-all duration-200 
+      bg-white font-pj rounded-full 
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+        {props.tagContent}
+      </p>
+    
+    </div>
+  )
+}
+
 const ExperienceContent = (props) => {
   const ExperiencePanelRef = useRef()
 
@@ -43,9 +65,12 @@ const ExperienceContent = (props) => {
           <p className='text-left  font-generalsans font-semibold !leading-normal text-white'>
             {props.contentInfo}
           </p>
-          <p className='text-justify  md:text-xl sm:text-l text-m font-generalsans pt-[1rem] !leading-normal text-white'>
+          <p className='text-justify  md:text-xl sm:text-l text-m font-generalsans py-[1rem] !leading-normal text-white'>
             {props.contentText}
           </p>  
+          <div className='flex flex-row gap-5 flex-wrap'>
+          {props.contentTags.map(tag => <Tag tagContent={tag}/>)}
+          </div>
         </div>
 
         <div className='h-auto  md:h-full md:max-w-[60%]
@@ -73,11 +98,11 @@ const Experiences = () => {
       contentTitle={`Project : Code Delta`} 
       contentInfo= {`ATOMIC - Paris | August 2024 - 2 Months`}
       contentText={`
-        I contributed to the development of a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
-        My role involved actively participating in the implementation of tracking systems using a ZED camera and Mediapipe, 
-        creating the AR challenges with Unity, and developing the backend for video stream management. 
-        
+        Code Delta is a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
+        My role was to setup the tracking systems (ZED & Mediapipe), 
+        create the AR challenges, and develope the backend for video stream management. 
       `} 
+      contentTags={["AR", "Computer Vision", "Unity", "C#", "Python"]}
       contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
       
       <div className='h-[25vh] animation-exp-1-to-exp-2'>
@@ -89,8 +114,9 @@ const Experiences = () => {
       contentText={`
         I worked on an AR mirror experience for an advertising campaign for Biotherm. 
         The goal was to complete three challenges to win prizes. 
-        I contributed to the development of tracking system, the challenges, and the UI. 
+        I contributed to the development of the tracking system, the gameplay, the UI and the data collection system. 
       `} 
+      contentTags={["AR", "Computer Vision", "Untiy", "C#", "Untiy Analytics"]}
       contentVideo={`./assets/Demo_Biotherm.mp4`}/> 
 
 
@@ -99,12 +125,13 @@ const Experiences = () => {
       
       <ExperienceContent 
       contentTitle={`Project : CoVR`} 
-      contentInfo= {`ISIR - Paris - March 2025 - 1 Month`}
+      contentInfo= {`ISIR - Paris | March 2025 - 1 Month`}
       contentText={`
         CoVR is a research project in HCI aimed at exploring haptic feedback methods in VR. 
         I contributed to the creation of a proof of concept, where the user could interact with multiple virtual objects that were mapped to a limited number of real objects.
         Object tracking was achieved with an OptiTrack motion capture system, and the demo was built in Unity for the Meta Quest headset.
       `} 
+      contentTags={["VR", "Motion Capture", "Unity", "C#"]}
       contentVideo={`./assets/Demo_isir.mp4`}/> 
 
     </section>
