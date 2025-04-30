@@ -12,6 +12,7 @@ import Skills from './sections/Skills';
 import Experiences from './sections/Experiences';
 import CanvasContainer from './components/CanvasContainer';
 import PageLoader from './components/PageLoader';
+import { Loader } from '@react-three/drei';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -46,6 +47,7 @@ const App = () => {
         <Footer />
         
         <CanvasContainer />
+        <Loader />
     </main>
   </ReactLenis>
   );
