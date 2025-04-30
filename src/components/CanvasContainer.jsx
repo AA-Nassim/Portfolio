@@ -88,6 +88,7 @@ const CanvasContainer = () => {
         start: "top bottom", 
         end: "bottom bottom", 
         scrub: 0.5, 
+        markers: true
       }
     })
 

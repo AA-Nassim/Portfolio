@@ -72,7 +72,9 @@ const Skills = () => {
         This relentless pursuit of knowledge and creativity has allowed me to explore different fields, connect ideas in innovative ways, and cultivate a unique vision`}/>
       
       
+      <div className='h-screen'>
 
+      </div>
     </section>
   )
 }

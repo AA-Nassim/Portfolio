@@ -92,35 +92,8 @@ const Experiences = () => {
 
   return (
     <section className='w-screen fourth-section text-white-800' id='work'>
+      
       <div className='h-[25vh] animation-experience-to-exp-1'>
-      </div>
-      <ExperienceContent 
-      contentTitle={`Project : Code Delta`} 
-      contentInfo= {`ATOMIC - Paris | August 2024 - 2 Months`}
-      contentText={`
-        Code Delta is a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
-        My role was to setup the tracking systems (ZED & Mediapipe), 
-        create the AR challenges, and develope the backend for video stream management. 
-      `} 
-      contentTags={["AR", "Computer Vision", "Unity", "C#", "Python"]}
-      contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
-      
-      <div className='h-[25vh] animation-exp-1-to-exp-2'>
-      </div>
-      
-      <ExperienceContent 
-      contentTitle={`Project : Biotherm`} 
-      contentInfo= {`ATOMIC - Paris | June 2024 - 1 Month`}
-      contentText={`
-        I worked on an AR mirror experience for an advertising campaign for Biotherm. 
-        The goal was to complete three challenges to win prizes. 
-        I contributed to the development of the tracking system, the gameplay, the UI and the data collection system. 
-      `} 
-      contentTags={["AR", "Computer Vision", "Untiy", "C#", "Untiy Analytics"]}
-      contentVideo={`./assets/Demo_Biotherm.mp4`}/> 
-
-
-      <div ref={transitionDivRef} className='h-[25vh] animation-exp-2-to-exp-3'>
       </div>
       
       <ExperienceContent 
@@ -133,6 +106,37 @@ const Experiences = () => {
       `} 
       contentTags={["VR", "Motion Capture", "Unity", "C#"]}
       contentVideo={`./assets/Demo_isir.mp4`}/> 
+
+      
+      
+      <div className='h-[25vh] animation-exp-1-to-exp-2'>
+      </div>
+      <ExperienceContent 
+      contentTitle={`Project : Code Delta`} 
+      contentInfo= {`ATOMIC - Paris | August 2024 - 2 Months`}
+      contentText={`
+        Code Delta is a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
+        My role was to setup the tracking systems (ZED & Mediapipe), 
+        create the AR challenges, and develope the backend for video stream management. 
+      `} 
+      contentTags={["AR", "Computer Vision", "Unity", "C#", "Python"]}
+      contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
+      
+
+      <div ref={transitionDivRef} className='h-[25vh] animation-exp-2-to-exp-3'>
+      </div>
+      
+      <ExperienceContent 
+      contentTitle={`Project : Biotherm`} 
+      contentInfo= {`ATOMIC - Paris | June 2024 - 1 Month`}
+      contentText={`
+        I worked on an AR mirror experience for an advertising campaign for Biotherm. 
+        The goal was to complete three challenges to win prizes. 
+        I contributed to the development of the tracking system, the gameplay, the UI and the data collection system. 
+      `} 
+      contentTags={["AR", "Computer Vision", "Untiy", "C#", "Untiy Analytics"]}
+      contentVideo={`./assets/Demo_Biotherm.mp4`}/> 
+      
 
     </section>
   )
