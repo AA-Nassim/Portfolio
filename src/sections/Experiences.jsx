@@ -69,7 +69,7 @@ const ExperienceContent = (props) => {
             {props.contentText}
           </p>  
           <div className='flex flex-row gap-5 flex-wrap'>
-          {props.contentTags.map(tag => <Tag tagContent={tag}/>)}
+          {props.contentTags.map((tag, i) => <Tag tagContent={tag} key={i}/>)}
           </div>
         </div>
 

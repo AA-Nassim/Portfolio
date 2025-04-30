@@ -20,10 +20,8 @@ const App = () => {
 
   return ( 
   <ReactLenis root>
-    <main className='mx-auto section-container'>
+    <main className='mx-auto section-container' id='section_container_main_wrapper'>
         <Navbar />
-        
-        <CanvasContainer />
 
         <Hero /> 
 
@@ -47,7 +45,7 @@ const App = () => {
 
         <Footer />
         
-                   
+        <CanvasContainer />
     </main>
   </ReactLenis>
   );

@@ -43,9 +43,9 @@ const Footer = () => {
                         <ButtonIcon icon='./assets/LogoGithub.png' link='https://www.github.com/AA-Nassim' invert/>
                     </div>
 
-                    <hr class=" self-center w-[50%] h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+                    <hr className=" self-center w-[50%] h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
 
-                    <p className='pt-5 text-white opacity-[.7] text-center text-sm'>
+                    <p className='py-5 text-white opacity-[.7] text-center text-sm'>
                         This Website was made by me. You can find the source code on my Github. 
                         <br />
                         Special thanks to Silvercrow101 and Alexa Kruckenberg for the 3D models. 
