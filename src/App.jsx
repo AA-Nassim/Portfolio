@@ -21,7 +21,7 @@ const App = () => {
 
   return ( 
   <ReactLenis root>
-    <main className='mx-auto section-container' id='section_container_main_wrapper'>
+    <main className='w-screen *:mx-auto section-container' id='section_container_main_wrapper'>
         <Navbar />
 
         <Hero /> 

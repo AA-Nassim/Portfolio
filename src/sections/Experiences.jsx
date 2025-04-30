@@ -76,7 +76,7 @@ const ExperienceContent = (props) => {
         <div className='h-auto  md:h-full md:max-w-[60%]
         flex justify-end
         '>
-          <video  autoPlay loop muted className='h-[100%] w-auto justify-end rounded-[1rem]'>
+          <video  autoPlay loop muted  className='h-[100%] w-auto justify-end rounded-[1rem]'>
             <source src={props.contentVideo} type='video/mp4'/>
           </video>
         </div>
