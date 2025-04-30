@@ -118,15 +118,15 @@ const Skills = () => {
           I was also involved in multiple R&D projects, such as, the implementation of computer vision models for Unity, object tracking for Web AR applications.
           `}/>
 
-        <SkillContainter id="Skill3" contentTitle={"Learning"} 
-        contentText={`True mastery comes from lifelong learning. After diving into Three.js to make this website, 
-        I’m eager to apply my freshly acquired knowledge to explore new XR possibilities.`}/>
+          <SkillContainter id="Skill3" contentTitle={"Learning"} 
+          contentText={`True mastery comes from lifelong learning. After diving into Three.js to make this website, 
+          I’m eager to apply my freshly acquired knowledge to explore new XR possibilities.`}/>
 
-        <SkillContainter id="Skill2" contentTitle={"Curiosity"} 
-        contentText={`Driven by curiosity, I have found my self involved in a diverse range of projects, 
-        from developing software solutions to designing and producing three board games.
-        This relentless pursuit of knowledge and creativity has allowed me to explore different fields, connect ideas in innovative ways, and cultivate a unique vision.`}/>
-      
+          <SkillContainter id="Skill2" contentTitle={"Curiosity"} 
+          contentText={`Driven by curiosity, I have found my self involved in a diverse range of projects, 
+          from developing software solutions to designing and producing three board games.
+          This relentless pursuit of knowledge and creativity has allowed me to explore different fields, connect ideas in innovative ways, and cultivate a unique vision.`}/>
+        
         </div>
       </div>
       <div className='h-[100vh]'></div>

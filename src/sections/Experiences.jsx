@@ -91,7 +91,7 @@ const Experiences = () => {
   const transitionDivRef = useRef()
 
   return (
-    <section className='w-screen fourth-section text-white-800' id='work'>
+    <section className='w-screen overflow-hidden fourth-section text-white-800' id='work'>
       
       <div className='h-[25vh] animation-experience-to-exp-1'>
       </div>
