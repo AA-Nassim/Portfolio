@@ -6,11 +6,11 @@ import SplitType from 'split-type';
 
 const About = () => {
 
-    
+    const text = new SplitType('#AboutText')
+    const chars = text.chars
 
     useGSAP(() => {
-        const text = new SplitType('#AboutText')
-        const chars = text.chars
+        
 
         gsap.fromTo(text.words, 
             {
@@ -52,16 +52,6 @@ const About = () => {
             }
         )
 
-        // gsap.to(text.words, {
-        //     scrollTrigger: {
-        //         trigger: ".second-section", 
-        //         // pin: "#AboutText",
-        //         start: "top 25%", 
-        //         end: "top top", 
-        //         pin: "#AboutText", 
-        //         markers: true, 
-        //     }
-        // })
     }, [])
 
     return ( 

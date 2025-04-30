@@ -108,7 +108,7 @@ const Skills = () => {
   }, [])
 
   return (
-    <section className='h-auto third-section text-white-800 c-space  pt-[10%]' id='vision'>
+    <section className='w-full overflow-hidden h-auto third-section text-white-800 c-space pt-[10%]' id='vision'>
       <div className='skills_container_wrapper'>
         <div className='skills_container w-fit flex flex-row flex-nowrap gap-[3rem]'>
           
