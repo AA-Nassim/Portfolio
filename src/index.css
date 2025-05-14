@@ -157,6 +157,11 @@ body {
   }
 }
 
+.center-justified {
+  text-align: justify;
+  text-align-last: center;
+}
+
 .waving-hand {
   animation-name: wave-animation;
   animation-duration: 2.5s;

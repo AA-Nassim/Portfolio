@@ -41,9 +41,10 @@ const ExperienceContent = (props) => {
 
       scrollTrigger: {
         trigger: ExperiencePanelRef.current, 
-        start: "top 60%",
-        end : "top 20%", 
+        start: "top 80%",
+        end : "top 10%", 
         toggleActions: "restart reverse restart reverse", 
+        markers: true,
       }
     })
   }, [])
@@ -134,7 +135,7 @@ const Experiences = () => {
         The goal was to complete three challenges to win prizes. 
         I contributed to the development of the tracking system, the gameplay, the UI and the data collection system. 
       `} 
-      contentTags={["AR", "Computer Vision", "Untiy", "C#", "Untiy Analytics"]}
+      contentTags={["AR", "Computer Vision", "Unity", "C#", "Unity Analytics"]}
       contentVideo={`./assets/Demo_Biotherm.mp4`}/> 
       
 

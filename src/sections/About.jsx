@@ -1,16 +1,15 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
-import React from 'react';
+import React, { useEffect } from 'react';
 import SplitType from 'split-type';
 
 
 const About = () => {
 
-    const text = new SplitType('#AboutText')
-    const chars = text.chars
-
     useGSAP(() => {
         
+        
+        const text = SplitType.create("#AboutText", { types: "words,chars" });
 
         gsap.fromTo(text.words, 
             {
@@ -25,7 +24,6 @@ const About = () => {
                 ease: 'power4.out', 
                 scrollTrigger: {
                     trigger: ".second-section", 
-                    // pin: "#AboutText",
                     start: "top 50%", 
                     end: "top 35%", 
                     scrub: 0.5, 
@@ -44,7 +42,6 @@ const About = () => {
                 ease: 'power4.out', 
                 scrollTrigger: {
                     trigger: ".second-section", 
-                    // pin: "#AboutText",
                     start: "top 35%", 
                     end: "top 15%", 
                     scrub: 0.5, 
