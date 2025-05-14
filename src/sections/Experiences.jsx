@@ -44,7 +44,6 @@ const ExperienceContent = (props) => {
         start: "top 80%",
         end : "top 10%", 
         toggleActions: "restart reverse restart reverse", 
-        markers: true,
       }
     })
   }, [])
