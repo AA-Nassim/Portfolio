@@ -3977,7 +3977,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       text-sm font-bold text-purple-900 \r
       transition-all duration-200 \r
       bg-white font-pj rounded-full \r
-      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900`,children:r.tagContent})]}),hw=r=>{const e=W.useRef();return Uc(()=>{Er.fromTo(e.current,{scale:.5,opacity:.25},{scale:1,opacity:1,duration:.5,ease:"power4.out",scrollTrigger:{trigger:e.current,start:"top 80%",end:"top 10%",toggleActions:"restart reverse restart reverse",markers:!0}})},[]),k.jsx("div",{className:"md:h-[50%] sm:h-[85%] w-full c-space xl:pl-[15rem] xl:pr-[15rem] experience-content flex justify-center",children:k.jsxs("div",{ref:e,className:` \r
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900`,children:r.tagContent})]}),hw=r=>{const e=W.useRef();return Uc(()=>{Er.fromTo(e.current,{scale:.5,opacity:.25},{scale:1,opacity:1,duration:.5,ease:"power4.out",scrollTrigger:{trigger:e.current,start:"top 80%",end:"top 10%",toggleActions:"restart reverse restart reverse"}})},[]),k.jsx("div",{className:"md:h-[50%] sm:h-[85%] w-full c-space xl:pl-[15rem] xl:pr-[15rem] experience-content flex justify-center",children:k.jsxs("div",{ref:e,className:` \r
       w-full h-auto flex flex-col md:flex-row justify-center p-5 gap-5\r
       rounded-[1rem] overflow-hidden\r
       bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500\r
