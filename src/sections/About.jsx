@@ -55,9 +55,13 @@ const About = () => {
         <section className='h-screen w-screen c-space  second-section text-white-800 pt-[10%]' id='about'>
             <div className='h-full flex w-full xl:px-[20%]'>
                 <p id='AboutText' className='w-full sm:text-3xl text-xl font-medium text-white text-center font-generalsans split-text-target'>
-                With a Master's degree in Computer Science focused on AI and Human-Computer Interaction, I’m eager to channel my expertise into the world of immersive technologies. 
+                Artificial Intelligence (AI) and Human-Computer Interaction (HCI) Engineer with strong experience in developing immersive augmented and virtual reality (AR/VR) applications on Unity. 
                 <br></br>
-                I thrive in R&D environments where curiosity drives innovation, and I’m passionate about exploring new ways technology can enhance human experiences.
+                Skilled in training and deploying AI models for real-world use cases. 
+                <br></br>
+                Multilingual (Arabic, French, English) with a robust academic background from Sorbonne University.
+                <br></br>
+                I thrive in R&D environments where curiosity drives innovation ! 
                 </p>
             </div>
             

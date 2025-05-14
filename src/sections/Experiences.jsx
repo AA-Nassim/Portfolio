@@ -118,6 +118,7 @@ const Experiences = () => {
         Code Delta is a pilot for a youth TV show featuring augmented reality, where two teams compete in AR-based games. 
         My role was to setup the tracking systems (ZED & Mediapipe), 
         create the AR challenges, and develope the backend for video stream management. 
+        I Worked closely with technical and creative teams in a fast-paced audiovisual production setting.
       `} 
       contentTags={["AR", "Computer Vision", "Unity", "C#", "Python"]}
       contentVideo={`./assets/Demo_CodeDelta.mp4`}/> 
@@ -132,7 +133,9 @@ const Experiences = () => {
       contentText={`
         I worked on an AR mirror experience for an advertising campaign for Biotherm. 
         The goal was to complete three challenges to win prizes. 
-        I contributed to the development of the tracking system, the gameplay, the UI and the data collection system. 
+        I contributed to the development of the tracking system, the gameplay, the UI.
+        Built data tracking pipelines via Unity Analytics. 
+        Successfully launched at Oslo Airport, reaching 2000+ users in one week.
       `} 
       contentTags={["AR", "Computer Vision", "Unity", "C#", "Unity Analytics"]}
       contentVideo={`./assets/Demo_Biotherm.mp4`}/> 

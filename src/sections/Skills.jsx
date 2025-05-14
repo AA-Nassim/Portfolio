@@ -54,33 +54,8 @@ const SkillContainter = (props) => {
 
 const Skills = () => {
 
-  // useGSAP(() => {
 
-  // }, [])
 
-  // return (
-  //   <section className='w-screen h-auto third-section text-white-800 c-space flex flex-col gap-[3rem] pt-[10%]' id='vision'>
-      
-  //     <SkillContainter id="Skill1" contentTitle={"Development"} 
-  //     contentText={`I have extensive experience working with Unity, having contributed to the production side of several AR & VR products. 
-  //     I was also involved in multiple R&D projects, such as, the implementation of computer vision models for Unity, object tracking for Web AR applications.
-  //     `}/>
-      
-  //     <SkillContainter id="Skill3" contentTitle={"Learning"} 
-  //     contentText={`True mastery comes from lifelong learning. After diving into Three.js to make this website, 
-  //     I’m eager to apply my freshly acquired knowledge to explore new XR possibilities.`}/>
-
-  //     <SkillContainter id="Skill2" contentTitle={"Curiosity"} 
-  //     contentText={`Driven by curiosity, I have found my self involved in a diverse range of projects, 
-  //       from developing software solutions to designing and producing three board games.
-  //       This relentless pursuit of knowledge and creativity has allowed me to explore different fields, connect ideas in innovative ways, and cultivate a unique vision`}/>
-      
-      
-  //     <div className='h-screen'>
-
-  //     </div>
-  //   </section>
-  // )
   useGSAP(() => {
     const races = document.querySelector(".skills_container");
     console.log(races.offsetWidth)
@@ -112,19 +87,24 @@ const Skills = () => {
       <div className='skills_container_wrapper'>
         <div className='skills_container w-fit flex flex-row flex-nowrap gap-[3rem]'>
           
-          <SkillContainter id="Skill1" contentTitle={"Development"} 
-          contentText={`I have extensive experience working with Unity, having contributed to the production side of several AR & VR products. 
-          I was also involved in multiple R&D projects, such as, the implementation of computer vision models for Unity, object tracking for Web AR applications.
+          <SkillContainter id="Skill1" contentTitle={"Immersive Realities"} 
+          contentText={`
+            I have extensive experience working with Unity, having contributed to the production side of several AR & VR products. 
+          Whether optimizing for Meta Quest or prototyping mobile AR filters, I thrive on solving spatial design challenges and making virtual interactions feel real.
+          `}
+          />
+
+          <SkillContainter id="Skill3" contentTitle={"Intelligent Systems"} 
+          contentText={`
+          With a strong foundation in AI, I’ve designed and deployed models for real-world applications specializing in computer vision. 
+          My work includes R&D projects like implementing models for body and object tracking, gesture recognition for Unity.          
           `}/>
 
-          <SkillContainter id="Skill3" contentTitle={"Learning"} 
-          contentText={`True mastery comes from lifelong learning. After diving into Three.js to make this website, 
-          I’m eager to apply my freshly acquired knowledge to explore new XR possibilities.`}/>
-
-          <SkillContainter id="Skill2" contentTitle={"Curiosity"} 
-          contentText={`Driven by curiosity, I have found my self involved in a diverse range of projects, 
-          from developing software solutions to designing and producing three board games.
-          This relentless pursuit of knowledge and creativity has allowed me to explore different fields, connect ideas in innovative ways, and cultivate a unique vision.`}/>
+          <SkillContainter id="Skill2" contentTitle={"Limitless Curiosity"} 
+          contentText={`
+          Driven by curiosity, I have found my self involved in a diverse range of projects, from developing software solutions to designing and producing three board games on my free time.
+          This relentless pursuit of knowledge and creativity has allowed me to explore different fields, connect ideas in innovative ways, and cultivate a unique vision.
+          `}/>
         
         </div>
       </div>
