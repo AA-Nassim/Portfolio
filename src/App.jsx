@@ -36,7 +36,7 @@ const App = () => {
 
         <Skills /> 
     
-        <div className='h-[50vh] animation-skills-to-work'>
+        <div className='h-screen animation-skills-to-work'>
         </div>
 
         <Experiences /> 

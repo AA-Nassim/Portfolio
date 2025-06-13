@@ -58,7 +58,6 @@ const Skills = () => {
 
   useGSAP(() => {
     const races = document.querySelector(".skills_container");
-    console.log(races.offsetWidth)
 
     function getScrollAmount() {
       let racesWidth = races.scrollWidth;
@@ -89,23 +88,31 @@ const Skills = () => {
           
           <SkillContainter id="Skill1" contentTitle={"Immersive Realities"} 
           contentText={`
-            I have extensive experience working with Unity, having contributed to the production side of several AR & VR products. 
+          I have extensive experience working with Unity, having contributed to the production side of several AR & VR products. 
           Whether optimizing for Meta Quest or prototyping mobile AR filters, I thrive on solving spatial design challenges and making virtual interactions feel real.
           `}
           />
 
-          <SkillContainter id="Skill3" contentTitle={"Intelligent Systems"} 
+          <SkillContainter id="Skill2" contentTitle={"Intelligent Systems"} 
           contentText={`
-          With a strong foundation in AI, I’ve designed and deployed models for real-world applications specializing in computer vision. 
-          My work includes R&D projects like implementing models for body and object tracking, gesture recognition for Unity.          
+          With a strong academic foundation in AI, I’ve designed and deployed models for real-world applications specializing in computer vision. 
+          My experience includes developing body tracking, object tracking and gesture recognition systems for Unity, and training custom deep learning models for action prediction.
           `}/>
 
-          <SkillContainter id="Skill2" contentTitle={"Limitless Curiosity"} 
+          <SkillContainter id="Skill3" contentTitle={"Web Technologies"} 
           contentText={`
-          Driven by curiosity, I have found my self involved in a diverse range of projects, from developing software solutions to designing and producing three board games on my free time.
+          Bringing extensive experience in web development, I excel at designing interactive and responsive user interfaces. 
+          My toolkit includes React, Three.js, Next.js, and Tailwind for frontend development, alongside backend proficiency in C#.NET and Django. 
+          I create modern, high-performance web applications focused on exceptional user experiences.
+          `}/>
+
+          <SkillContainter id="Skill4" contentTitle={"Limitless Curiosity"} 
+          contentText={`
+          Driven by curiosity, I have found my self involved in a diverse range of projects, from developing software solutions to designing and producing four board games on my free time.
           This relentless pursuit of knowledge and creativity has allowed me to explore different fields, connect ideas in innovative ways, and cultivate a unique vision.
           `}/>
-        
+          <SkillContainter id="Skill5" contentTitle={" "} 
+          contentText={` `}/>
         </div>
       </div>
       <div className='h-[100vh]'></div>
