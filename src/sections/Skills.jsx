@@ -72,7 +72,7 @@ const Skills = () => {
 
     ScrollTrigger.create({
       trigger:".skills_container_wrapper",
-      start:"top 40%",
+      start:"top 25%",
       end: () => `+=${getScrollAmount() * -1}`,
       pin: true,
       animation:tween,
